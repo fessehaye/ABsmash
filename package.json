@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "airtable": "^0.4.3",
     "eslint": "^3.13.1",
     "next": "^1.2.3",
     "react-bootstrap": "^0.30.7",
