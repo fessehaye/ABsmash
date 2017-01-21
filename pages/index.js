@@ -1,6 +1,9 @@
 import React from 'react'
-import Router from 'next/router'
+import Header from '../layout/header'
 
 export default class extends React.Component {
-
+    render () 
+    {
+        return (<Header/>)
+    }
 }
