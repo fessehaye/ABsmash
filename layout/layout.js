@@ -7,11 +7,12 @@ export default class extends React.Component {
     render() {
         return (
         <div >
-            <Header />
-                <Grid>
+        
+                    <Header />
                     {this.props.children}
-                </Grid>
-            <Footer/>
+                    <Footer/>
+               
+            
         </div>
         );
     }  

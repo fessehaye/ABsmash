@@ -1,12 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
-import {Navbar,Nav,NavItem,Image,Grid,Row} from 'react-bootstrap'
-
+import {Navbar,Nav,NavItem,Image,Grid,Row,Glyphicon} from 'react-bootstrap'
 
 export default class extends React.Component {
     render() {
-
         var banner = {
             width:'100%',
             height:'400px',
@@ -40,21 +37,29 @@ export default class extends React.Component {
 
                     `}</style>
                 </Head>
+                <Navbar inverse fixedTop>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="/">Edmonton Smash Community</a>
+                        </Navbar.Brand>
+                    </Navbar.Header>
+                </Navbar>
                 <div style={banner}></div>
-                <Navbar>
+                <Navbar inverse collapseOnSelect>
                     <Navbar.Header >
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav>
-                            <NavItem eventKey={1}>Events</NavItem>
-                            <NavItem eventKey={2}>Announcements</NavItem>
-                            <NavItem eventKey={3}>Information</NavItem>
-                            <NavItem eventKey={4}>Rankings</NavItem>
-                            <NavItem eventKey={5}>Location Finder</NavItem>
+                            <NavItem eventKey={1}  onClick={() => location.href = '/events'}><Glyphicon glyph="calendar" /> Events</NavItem>
+                            <NavItem eventKey={2} onClick={() => location.href = '/announcements'}><Glyphicon glyph="tasks" /> Announcements</NavItem>
+                            <NavItem eventKey={3} onClick={() => location.href = '/info'}><Glyphicon glyph="alert" /> Information</NavItem>
+                            <NavItem eventKey={4} onClick={() => location.href = '/ranking'}><Glyphicon glyph="star" /> Rankings</NavItem>
+                            <NavItem eventKey={5} onClick={() => location.href = '/location'}><Glyphicon glyph="globe" /> Location Finder</NavItem>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
             </div>
         );
     }
+}
