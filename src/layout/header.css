@@ -1,7 +1,6 @@
 .banner {
-    width:'100%';
     height:'400px';
-    backgroundSize:'cover';
+    background-size:'cover';
 }
 
 .header .container {
