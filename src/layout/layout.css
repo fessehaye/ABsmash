@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+    .mainMenu .navbar-nav {
+        float: none;
+        vertical-align: top;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    .mainMenu .navbar-collapse {
+        text-align: center;
+    }
+    
+}
