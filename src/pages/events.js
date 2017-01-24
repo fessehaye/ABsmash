@@ -5,7 +5,7 @@ class Main extends Component {
   render() {
     return (
       <Page>
-        here
+        tjere
       </Page>
     );
   }
