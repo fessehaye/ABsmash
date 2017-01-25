@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import {Grid,Row} from 'react-bootstrap';
 
-class Main extends Component {
+class Event extends Component {
   render() {
     return (
-      <div>
-        tjere
-      </div>
+      <Grid>
+        <Row>
+        </Row>
+      </Grid>
     );
   }
 }
 
-export default Main;
+export default Event;
