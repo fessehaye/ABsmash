@@ -1,0 +1,18 @@
+.footer {
+    background-color: #444;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-top:50px;
+}
+
+.footer-link-list {
+    border-left: 2px solid #BA694C;
+    padding-left: 25px;
+}
+
+.footerContainer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

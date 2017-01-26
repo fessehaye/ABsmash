@@ -14,6 +14,22 @@
     
 }
 
+@media (max-width: 1000px) {
+    .footerContainer {
+        display: none;
+    }
+
+    .bodyContent {
+        padding-bottom: 50px !important;
+    }
+
+}
+
+
 nav {
     background-color: #002F63 !important;
+}
+
+.bodyContent {
+    padding-bottom: 350px;
 }
