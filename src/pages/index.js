@@ -43,6 +43,7 @@ class Main extends Component {
               this.state.events.map((event,index) => {
                 return (<Carousel.Item key={index}>
                   <img className="carImg" height={500} alt="900x500" src={event.get('banner') ? event.get('banner')[0].url : blank}/>
+                  <h3 className={event.get('Location') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('Location')}</h3>
                   <Carousel.Caption>
                     <h3>{event.get('Name')}</h3>
                     <p>{event.get('Teaser')}</p>

@@ -2,3 +2,48 @@
     max-height: 500px;
     width: 100%;
 }
+@media (min-width: 768px) {
+    .carousel-caption {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: left;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-caption {
+        width: 100%;
+        left: 0%;
+        right: 0%;
+    }
+    .edmLocation {
+        display:none;
+    }
+    .cgyLocation {
+        display:none;
+    }
+}
+
+.carousel-caption{
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    text-shadow: none;
+}
+
+.edmLocation {
+    color: white;
+    top: 0;
+    z-index: 3;
+    background-color: #002F63;
+    position: absolute;
+    width: 100%;
+}
+
+.cgyLocation {
+    color: white;
+    top: 0;
+    z-index: 3;
+    background-color: #F0092B;
+    position: absolute;
+    width: 100%;
+}
