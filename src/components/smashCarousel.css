@@ -1,0 +1,93 @@
+.carImg {
+    max-height: 500px;
+    width: 100%;
+}
+
+.carousel {
+    margin-bottom: 21px;
+}
+@media (min-width: 768px) {
+    .carousel-caption {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: left;
+    }
+
+    .carousel-indicators{
+        bottom: 0;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-caption {
+        width: 100%;
+        left: 0%;
+        right: 0%;
+    }
+    .edmLocation {
+        display:none;
+    }
+    .cgyLocation {
+        display:none;
+    }
+    .gameEvent div{
+        display:none !important;
+    }
+}
+
+.carousel-caption{
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    text-shadow: none;
+}
+
+.edmLocation {
+    color: white;
+    top: 0;
+    z-index: 3;
+    background-color: #002F63;
+    position: absolute;
+    width: 100%;
+}
+
+.cgyLocation {
+    color: white;
+    top: 0;
+    z-index: 3;
+    background-color: #F0092B;
+    position: absolute;
+    width: 100%;
+}
+
+.gameEvent {
+   position: absolute;
+   top: 60px;
+   z-index: 3;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   
+}
+
+.gameEvent div {
+    display: inline;
+    text-align: center;
+    border-radius: 25px;
+    margin-right: 10px;
+    padding: 3px;
+    border: 2px solid white;
+}
+
+.gameEvent .pM{
+    background-color: #B493C5;
+}
+.gameEvent .Melee{
+    background-color: #F0092B;
+}
+.gameEvent .S4{
+    background-color: #002F63;
+}
+.gameEvent .S64{
+    background-color: #0AF74A;
+}

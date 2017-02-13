@@ -9,6 +9,7 @@
   "dependencies": {
     "airtable": "^0.4.3",
     "history": "^4.5.1",
+    "moment": "^2.17.1",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
