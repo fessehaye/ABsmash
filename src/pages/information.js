@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid,Row,Panel,Accordion} from 'react-bootstrap';
+import {Grid,Panel,Accordion} from 'react-bootstrap';
 
 const title = (
   <h3>Information And Rulesets</h3>
