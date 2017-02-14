@@ -26,7 +26,7 @@ class Header extends Component {
                                 <LinkContainer to="/events"><NavItem eventKey={1}><Glyphicon glyph="calendar" /> Events</NavItem></LinkContainer>
                                 <LinkContainer to="/announcements"><NavItem eventKey={2}><Glyphicon glyph="tasks" /> Announcements</NavItem></LinkContainer>
                                 <LinkContainer to="/info"><NavItem eventKey={3}><Glyphicon glyph="alert" /> Information</NavItem></LinkContainer>
-                                <LinkContainer to="/ranking"><NavItem eventKey={4}><Glyphicon glyph="star" /> Rankings</NavItem></LinkContainer>
+                                {/*<LinkContainer to="/ranking"><NavItem eventKey={4}><Glyphicon glyph="star" /> Rankings</NavItem></LinkContainer>*/}
                                 <LinkContainer to="/location"><NavItem eventKey={5}><Glyphicon glyph="globe" /> Location Finder</NavItem></LinkContainer>
                             </Nav>
                         </Navbar.Collapse>

@@ -79,15 +79,17 @@
     border: 2px solid white;
 }
 
-.gameEvent .pM{
+
+
+.pM{
     background-color: #B493C5;
 }
-.gameEvent .Melee{
+.Melee{
     background-color: #F0092B;
 }
-.gameEvent .S4{
+.S4{
     background-color: #002F63;
 }
-.gameEvent .S64{
+.S64{
     background-color: #0AF74A;
 }

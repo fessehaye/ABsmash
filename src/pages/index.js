@@ -29,7 +29,7 @@ class Main extends Component {
             {field: 'Forced Order', direction: 'desc'},
             {field: 'start date', direction: 'desc'}
         ],
-        filterByFormula: 'IS_BEFORE(TODAY(),{start date})',
+        filterByFormula: 'AND(IS_BEFORE(TODAY(),{start date}),Approved = 1)',
         maxRecords: 7
     }).firstPage((err, records) => {
         if (err) { console.error(err); return; }

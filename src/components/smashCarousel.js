@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Carousel,Modal,Button,Col,Row} from 'react-bootstrap';
-import moment from 'moment';
+import {Carousel} from 'react-bootstrap';
+import SmashModal from './smashModal';
+
 import blank from './blank.jpg';
 import './smashCarousel.css';
 
@@ -27,7 +28,7 @@ class smashCarousel extends Component {
                 this.props.events.map((event,index) => {
                     return (<Carousel.Item key={index} onClick={() => {this.props.open(event)}}>
                     <img className="carImg" height={720} alt="fake replacement" src={event.get('banner') ? event.get('banner')[0].url : blank}/>
-                    <h3 className={event.get('Location') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('Location')}</h3>
+                    <h3 className={event.get('City') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('City')}</h3>
                     <div className="gameEvent">
                         {
                         event.get('events').map((games,index2) => {
@@ -47,50 +48,8 @@ class smashCarousel extends Component {
                 }
                 
             </Carousel>
-
-            <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}}>
-              <Modal.Header closeButton>
-                <Modal.Title>{this.props.selected ? this.props.selected.get('Name') : '' }</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <Row>
-                    <Col md={6}>
-                        <h5>Start Date: 
-                            { this.props.selected ? moment(this.props.selected.get('start date')).format('LLL') : 'N/A'}
-                        </h5>
-                    </Col>
-                    <Col md={6}>
-                        <h5>End Date: 
-                            { this.props.selected ? moment(this.props.selected.get('end date')).format('LLL') : 'N/A'}
-                        </h5>
-                    </Col>
-                </Row>
-                
-                <Row>
-                    <h3>City:</h3>
-                    <p>{this.props.selected ? this.props.selected.get('Location') : 'N/A'}</p>
-                </Row>
-
-                <Row>
-                    <h3>Details:</h3>
-                    <pre>{this.props.selected ? this.props.selected.get('Notes') : 'N/A'}</pre>
-                </Row>
-                
-                <Row>
-                    <h3>Link:</h3>
-                    <a href={this.props.selected ? this.props.selected.get('Bracket link') : 'N/A'}>
-                        <p>
-                            {this.props.selected ? this.props.selected.get('Bracket link') : 'N/A'}
-                        </p>
-                    </a>
-                </Row>
-
-                
-              </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={() => {this.props.close()}}>Close</Button>
-              </Modal.Footer>
-            </Modal>
+            <SmashModal {...this.props}/>
+            
           </div>
     );
   }
