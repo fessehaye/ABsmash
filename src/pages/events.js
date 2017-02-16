@@ -65,7 +65,7 @@ class Event extends Component {
           <Row>
             {
               this.state.events.map((event,index) => {
-                    return (<Card key={index} event={event} open={this.open(event)}/>)
+                    return (<Card key={index} event={event} />)
               })
             }
           </Row>
