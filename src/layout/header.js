@@ -9,13 +9,6 @@ class Header extends Component {
         return (
             
                 <div>
-                    <Navbar className="header" style={{margin: 0}}>
-                        <Navbar.Header >
-                            <Navbar.Brand>
-                                <a href="/">Edmonton Smash Community</a>
-                            </Navbar.Brand>
-                        </Navbar.Header>
-                    </Navbar>
                     <img className="img-responsive" src={banner} role="presentation" style={{maxHeight: 300,width: '100%'}}/>
                     <Navbar collapseOnSelect className="mainMenu">
                         <Navbar.Header >
@@ -23,6 +16,7 @@ class Header extends Component {
                         </Navbar.Header>
                         <Navbar.Collapse>
                             <Nav>
+                                <LinkContainer to="/"><NavItem eventKey={0}><Glyphicon glyph="home" /> Home</NavItem></LinkContainer>
                                 <LinkContainer to="/events"><NavItem eventKey={1}><Glyphicon glyph="calendar" /> Events</NavItem></LinkContainer>
                                 <LinkContainer to="/announcements"><NavItem eventKey={2}><Glyphicon glyph="tasks" /> Announcements</NavItem></LinkContainer>
                                 <LinkContainer to="/info"><NavItem eventKey={3}><Glyphicon glyph="alert" /> Information</NavItem></LinkContainer>
