@@ -11,7 +11,7 @@ class Header extends Component {
             
                 <div >
                     <img className="img-responsive" src={banner} role="presentation" style={{maxHeight: 300,width: '100%'}}/>
-                    <Affix affixStyle={{width:"100%",top: 0, zIndex:25}} offsetTop={250}>
+                    <Affix affixStyle={{width:"100%",top: 0, zIndex:25}} offsetTop={250} >
                         <Navbar collapseOnSelect className="mainMenu">
                             <Navbar.Header >
                                 <Navbar.Toggle />
@@ -23,7 +23,7 @@ class Header extends Component {
                                     <LinkContainer to="/announcements"><NavItem eventKey={2}><Glyphicon glyph="tasks" /> Announcements</NavItem></LinkContainer>
                                     <LinkContainer to="/info"><NavItem eventKey={3}><Glyphicon glyph="alert" /> Information</NavItem></LinkContainer>
                                     {/*<LinkContainer to="/ranking"><NavItem eventKey={4}><Glyphicon glyph="star" /> Rankings</NavItem></LinkContainer>*/}
-                                    <LinkContainer to="/location"><NavItem eventKey={5}><Glyphicon glyph="globe" /> Location Finder</NavItem></LinkContainer>
+                                    {/*<LinkContainer to="/location"><NavItem eventKey={5}><Glyphicon glyph="globe" /> Location Finder</NavItem></LinkContainer>*/}
                                 </Nav>
                             </Navbar.Collapse>
                         </Navbar>
