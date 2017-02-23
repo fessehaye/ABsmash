@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Grid,Row,Col} from 'react-bootstrap';
-import _ from 'underscore';
+import {Grid} from 'react-bootstrap';
 import './footer.css';
 
 var footerlinks = [
@@ -17,12 +16,6 @@ var footerlinks = [
   {name :"Event Calendar", link:"https://goo.gl/OMNNhk"}
 ];
 
-var footerGroups = _.groupBy(footerlinks, function(element, index){
-  return (index+1) % 4;
-});
-
-footerGroups = _.toArray(footerGroups);
-
 class Footer extends Component {
 
   render() {
@@ -35,19 +28,12 @@ class Footer extends Component {
                 <h3>Useful Links</h3>
               </div>
               <br/>
-              <Row>
-                {footerGroups.map((fgroup,index) => {
-                  return (
-                    <Col md={3} key={index}>
-                      <div className="footer-link-list">
-                        {fgroup.map((footer,index2) => {
-                          return (<p onClick={() => {var win = window.open(footer.link, '_blank');
-                          win.focus();}} key={index2}>{footer.name}</p>)
-                        })}
-                      </div>
-                  </Col>)
-                })}
-              </Row>         
+              <div className="footer-link-list">
+                  {footerlinks.map((footer,index) => {
+                    return (<p key={index} onClick={() => {var win = window.open(footer.link, '_blank');
+                            win.focus();}}>{footer.name}</p>)
+                  })}
+              </div>         
             </footer>
           </Grid>
         </div>
