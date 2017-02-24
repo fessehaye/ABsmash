@@ -26,7 +26,7 @@ class smashEvent extends Component {
            <Col md={2}>
                 <Thumbnail src={event.get('banner') ? event.get('banner')[0].url : blank}/>
            </Col>
-           <Col md={7} sm={6}>
+           <Col md={7} xs={6}>
                 <Row><h3 >{event.get('Name')}</h3></Row>
                 <Row>
                   <div className="gameEvent3">
@@ -40,7 +40,7 @@ class smashEvent extends Component {
                   </div>
                 </Row>
            </Col>
-           <Col md={3} sm={6}>
+           <Col md={3} xs={6}>
                 <Row><h3 style={{textAlign:"center"}}>{moment(event.get('start date')).format('LL')}</h3></Row>
            </Col>
      </Panel>

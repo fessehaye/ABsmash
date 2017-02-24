@@ -35,38 +35,39 @@ class smashCarousel extends Component {
         <Carousel>
                 {
                 this.props.events.map((event,index) => {
-                    return (<Carousel.Item key={index} onClick={() => {this.props.open(event)}}>
-                    <img className="carImg" height={720} alt="fake replacement" src={event.get('banner') ? event.get('banner')[0].url : blank}/>
-                    <h3 className={event.get('City') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('City')}</h3>
-                    <div className="gameEvent">
-                        {
-                          event.get('events').map((games,index2) => {
-                              return (<div className={event_class[games]} key={index2 + "b"}>
-                                        <h5>{event_format[games]}</h5>
-                                      </div>)
-                          })
-                        }
-                    </div>
-                    <Carousel.Caption>
-                        <h3>
-                          {event.get('Name')} &nbsp;
+                    return (
+                    <Carousel.Item style={{cursor:'pointer'}} key={index} onClick={() => {this.props.open(event)}}>
+                      <img className="carImg" height={720} alt="fake replacement" src={event.get('banner') ? event.get('banner')[0].url : blank}/>
+                      <h3 className={event.get('City') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('City')}</h3>
+                      <div className="gameEvent">
                           {
-                            event.get('tourney type') === 'regional' ?
-                              <OverlayTrigger placement="top" overlay={tooltipRegional}>
-                                <Glyphicon style={{color: "gold"}} className="tourneyWarning glyphicon" glyph="exclamation-sign" />
-                              </OverlayTrigger> : null
+                            event.get('events').map((games,index2) => {
+                                return (<div className={event_class[games]} key={index2 + "b"}>
+                                          <h5>{event_format[games]}</h5>
+                                        </div>)
+                            })
                           }
+                      </div>
+                      <Carousel.Caption>
+                          <h3>
+                            {event.get('Name')} &nbsp;
+                            {
+                              event.get('tourney type') === 'regional' ?
+                                <OverlayTrigger placement="top" overlay={tooltipRegional}>
+                                  <Glyphicon style={{color: "gold"}} className="tourneyWarning glyphicon" glyph="exclamation-sign" />
+                                </OverlayTrigger> : null
+                            }
 
-                          {
-                            event.get('tourney type') === 'major' ?
-                              <OverlayTrigger placement="top" overlay={tooltipMajor}>
-                                <Glyphicon style={{color: "silver"}} className="tourneyWarning glyphicon" glyph="exclamation-sign" />
-                              </OverlayTrigger> : null
-                          }
-                        </h3>
-                        <p>{event.get('Teaser')}</p>
-                        
-                    </Carousel.Caption>
+                            {
+                              event.get('tourney type') === 'major' ?
+                                <OverlayTrigger placement="top" overlay={tooltipMajor}>
+                                  <Glyphicon style={{color: "silver"}} className="tourneyWarning glyphicon" glyph="exclamation-sign" />
+                                </OverlayTrigger> : null
+                            }
+                          </h3>
+                          <p>{event.get('Teaser')}</p>
+                          
+                      </Carousel.Caption>
 
                     </Carousel.Item>)
                 })

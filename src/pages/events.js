@@ -86,7 +86,7 @@ class Event extends Component {
           <Row>
             {
               filteredEvents.map((event,index) => {
-                    return (<Card key={index} event={event} open={this.open}/>)
+                    return (<div key={index} className="clickable"><Card event={event} open={this.open}/></div>)
               })
             }
           </Row>
