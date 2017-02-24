@@ -49,7 +49,6 @@ class Event extends Component {
       showModal:true,
       selected: event
     });
-    console.log(this.state)
   }
 
   close = () => {
