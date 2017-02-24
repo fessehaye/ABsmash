@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Carousel} from 'react-bootstrap';
+import {Carousel,Glyphicon,OverlayTrigger,Tooltip} from 'react-bootstrap';
 import SmashModal from './smashModal';
 
 import blank from './blank.jpg';
@@ -18,9 +18,18 @@ const event_class = {
   "64": "S64"
 }
 
+const tooltipRegional = (
+  <Tooltip id="tooltip"><strong>Out of Region Attendance Expected!</strong></Tooltip>
+);
+
+const tooltipMajor = (
+  <Tooltip id="tooltip"><strong>Larger Player Attendance!</strong></Tooltip>
+);
+
 class smashCarousel extends Component {
 
   render() {
+
     return (
       <div>
         <Carousel>
@@ -33,14 +42,30 @@ class smashCarousel extends Component {
                         {
                         event.get('events').map((games,index2) => {
                             return (<div className={event_class[games]} key={index2 + "b"}>
-                                    <h5>{event_format[games]}</h5>
+                                      <h5>{event_format[games]}</h5>
                                     </div>)
                         })
                         }
                     </div>
                     <Carousel.Caption>
-                        <h3>{event.get('Name')}</h3>
+                        <h3>
+                          {event.get('Name')} &nbsp;
+                          {
+                            event.get('tourney type') === 'regional' ?
+                              <OverlayTrigger placement="top" overlay={tooltipRegional}>
+                                <Glyphicon style={{color: "gold"}} className="tourneyWarning glyphicon" glyph="exclamation-sign" />
+                              </OverlayTrigger> : null
+                          }
+
+                          {
+                            event.get('tourney type') === 'major' ?
+                              <OverlayTrigger placement="top" overlay={tooltipMajor}>
+                                <Glyphicon style={{color: "silver"}} className="tourneyWarning glyphicon" glyph="exclamation-sign" />
+                              </OverlayTrigger> : null
+                          }
+                        </h3>
                         <p>{event.get('Teaser')}</p>
+                        
                     </Carousel.Caption>
 
                     </Carousel.Item>)

@@ -30,8 +30,10 @@ class Footer extends Component {
               <br/>
               <div className="footer-link-list">
                   {footerlinks.map((footer,index) => {
-                    return (<p key={index} onClick={() => {var win = window.open(footer.link, '_blank');
-                            win.focus();}}>{footer.name}</p>)
+                    return (
+                      <p key={index} onClick={() => {var win = window.open(footer.link, '_blank');win.focus();}}>
+                        {footer.name}
+                      </p>)
                   })}
               </div>         
             </footer>

@@ -1,3 +1,4 @@
+
 .carImg {
     max-height: 500px;
     width: 100%;
@@ -6,12 +7,12 @@
 .carousel {
     margin-bottom: 21px;
 }
+
 @media (min-width: 768px) {
     .carousel-caption {
         left: 0;
         right: 0;
         bottom: 0;
-        text-align: left;
     }
 
     .carousel-indicators{
@@ -33,35 +34,51 @@
     .gameEvent div{
         display:none !important;
     }
+    span.tourneyWarning.glyphicon.glyphicon.glyphicon-exclamation-sign {
+        display:none;
+    }
 }
 
 .carousel-caption{
     padding: 10px;
     background: rgba(0,0,0,0.6);
     text-shadow: none;
+    padding-bottom: 25px;
 }
 
 .edmLocation {
-    color: white;
-    top: 0;
-    z-index: 3;
     background-color: #002F63;
+    color: white;
+    top: 45px;
+    right: -61px;
+    z-index: 3;
+    padding: 5px;
     position: absolute;
-    width: 100%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-align: center;
+    width: 280px;
 }
 
 .cgyLocation {
-    color: white;
-    top: 0;
-    z-index: 3;
     background-color: #F0092B;
+    color: white;
+    top: 45px;
+    right: -61px;
+    z-index: 3;
+    padding: 5px;
     position: absolute;
-    width: 100%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    text-align: center;
+    width: 280px;
 }
 
 .gameEvent {
    position: absolute;
-   top: 60px;
+   top: 10px;
    z-index: 3;
    display: -webkit-flex;
    display: flex;
@@ -75,9 +92,15 @@
     text-align: center;
     border-radius: 25px;
     margin-right: 10px;
-    padding: 3px;
+    padding: 5px;
     border: 2px solid white;
 }
+
+span.tourneyWarning.glyphicon.glyphicon.glyphicon-exclamation-sign {
+    font-size: 1.2em;
+    z-index: 10;
+}
+
 
 
 
