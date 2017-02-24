@@ -24,6 +24,10 @@ class Event extends Component {
   }
 
   componentDidMount = () => {
+    this.loadData();
+  }
+
+  loadData = () => {
     let query = {
         view: 'Main View',
         sort: [
@@ -36,8 +40,7 @@ class Event extends Component {
     }
     base('Events').select(query).firstPage((err, records) => {
         if (err) { console.error(err); return; }
-        this.setState({events: records, selectedEvent:records[0]});
-        console.log(this.state.events);
+        this.setState({events: records, selected:records[0]});
     });
   }
 
@@ -46,6 +49,7 @@ class Event extends Component {
       showModal:true,
       selected: event
     });
+    console.log(this.state)
   }
 
   close = () => {
@@ -83,12 +87,12 @@ class Event extends Component {
           <Row>
             {
               filteredEvents.map((event,index) => {
-                    return (<Card key={index} event={event} />)
+                    return (<Card key={index} event={event} open={this.open}/>)
               })
             }
           </Row>
         </Jumbotron>
-        <SmashModal selected={this.state.selected} open={this.open} close={this.close}/>
+        <SmashModal showModal={this.state.showModal} selected={this.state.selected} open={this.open} close={this.close}/>
       </Grid>
     );
   }
