@@ -14,7 +14,8 @@ class Event extends Component {
       events: [],
       showModal: false,
       selected: null,
-      searchText: ''
+      searchText: '',
+      oldPost: false
     };
 
     this.close = this.close.bind(this);
@@ -23,14 +24,17 @@ class Event extends Component {
   }
 
   componentDidMount = () => {
-    base('Events').select({
+    let query = {
         view: 'Main View',
         sort: [
             {field: 'Forced Order', direction: 'desc'},
             {field: 'start date', direction: 'desc'}
-        ],
-        //filterByFormula: 'AND(IS_BEFORE(TODAY(),{start date}),Approved = 1)'
-    }).firstPage((err, records) => {
+        ]
+    }
+    if(!this.state.oldPost){
+      query.filterByFormula = 'AND(IS_BEFORE(TODAY(),{start date}),Approved = 1)';
+    }
+    base('Events').select(query).firstPage((err, records) => {
         if (err) { console.error(err); return; }
         this.setState({events: records, selectedEvent:records[0]});
         console.log(this.state.events);
@@ -51,20 +55,34 @@ class Event extends Component {
   }
 
   render() {
-    
+
+    let filteredEvents= this.state.events.filter(
+      (event) => {
+        if(event){
+          return event.get('Name').toLowerCase().includes(this.state.searchText);
+        }
+        return true;
+      }
+    );
+
     return (
       <Grid>      
         <Jumbotron>
           <Row>
             <Form>
               <FormGroup controlId="formInlineName">
-                <FormControl type="text" placeholder="Search" value={this.state.searchText}/>
+                <FormControl 
+                  type="text"
+                  placeholder="Search"
+                  value={this.state.searchText}
+                  onChange={(e) => (this.setState({searchText:e.target.value.toLowerCase()}))}
+                  />
               </FormGroup>
             </Form>
           </Row>
           <Row>
             {
-              this.state.events.map((event,index) => {
+              filteredEvents.map((event,index) => {
                     return (<Card key={index} event={event} />)
               })
             }

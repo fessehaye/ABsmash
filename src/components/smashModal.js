@@ -26,14 +26,14 @@ class SmashModal extends Component {
               <Modal.Body>
                 <Row>
                     <Col md={6}>
-                        <h4>Start Date: 
+                        <h3>Start Date: 
                              <span> { this.props.selected ? moment(this.props.selected.get('start date')).format('LLL') : 'N/A'}</span>
-                        </h4>
+                        </h3>
                     </Col>
                     <Col md={6}>
-                        <h4>End Date: 
+                        <h3>End Date: 
                             <span> { this.props.selected ? moment(this.props.selected.get('end date')).format('LLL') : 'N/A'}</span>
-                        </h4>
+                        </h3>
                     </Col>
                 </Row>
                 
@@ -52,16 +52,16 @@ class SmashModal extends Component {
                     <Col md={12}>
                         <h3>Games:</h3>
                         <div className="gameEvent2">
-                        {
-                            this.props.selected ?
-                            this.props.selected.get('events').map((games,index2) => {
-                                return (<div className={event_class[games]} key={index2 + "b"}>
-                                        <h5>{event_format[games]}</h5>
-                                        </div>)
-                            })
-                            : "N/A"
-                        }
-                    </div>
+                            {
+                                this.props.selected ?
+                                this.props.selected.get('events').map((games,index2) => {
+                                    return (<div className={event_class[games]} key={index2 + "b"}>
+                                            <h5>{event_format[games]}</h5>
+                                            </div>)
+                                })
+                                : "N/A"
+                            }
+                        </div>
                     </Col>
                 </Row>
 

@@ -1,12 +1,11 @@
-.gameEvent2 {
+.gameEvent3 {
    display: -webkit-flex;
    display: flex;
    -webkit-flex-direction: row;
    flex-direction: row;
-   
 }
 
-.gameEvent2 div {
+.gameEvent3 div {
     display: inline;
     text-align: center;
     border-radius: 25px;

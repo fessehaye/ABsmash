@@ -40,11 +40,11 @@ class smashCarousel extends Component {
                     <h3 className={event.get('City') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('City')}</h3>
                     <div className="gameEvent">
                         {
-                        event.get('events').map((games,index2) => {
-                            return (<div className={event_class[games]} key={index2 + "b"}>
-                                      <h5>{event_format[games]}</h5>
-                                    </div>)
-                        })
+                          event.get('events').map((games,index2) => {
+                              return (<div className={event_class[games]} key={index2 + "b"}>
+                                        <h5>{event_format[games]}</h5>
+                                      </div>)
+                          })
                         }
                     </div>
                     <Carousel.Caption>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Grid,Row,Jumbotron} from 'react-bootstrap';
 import Carousel from '../components/smashCarousel';
 import Airtable from 'airtable';
-import './index.css';
 
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 
@@ -63,8 +62,8 @@ class Main extends Component {
           />
         <Grid>
         <Row>
-          <Jumbotron>
-            <h1>Welcome To The Edmonton Smash Community</h1>
+          <Jumbotron style={{textAlign:"center"}}>
+            <h1 >Welcome To The Edmonton Smash Community</h1>
             <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
             welcoming scenes for every installment of the hit Nintendo series. Browse around to
              find information on our events and our players, and how you can get involved!</p>
