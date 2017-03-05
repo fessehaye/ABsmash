@@ -14,33 +14,33 @@ class Information extends Component {
             <Accordion>
                 <Panel header="Newcomers" eventKey="1">
                     <h3>Who can join tournaments?</h3>
-                    Anyone! You don’t have to be a certain age or skill level to join a tournament in Alberta. The only exception is for Arcadian-style events (held occasionally), which only allow newcomers and up-and-coming players.
-                    Some tournaments may require pre-registration, but anyone can pre-register. Check with each individual event to see which ones are Arcadians or require pre-registration.
+                    <p>Anyone! You don’t have to be a certain age or skill level to join a tournament in Alberta. The only exception is for Arcadian-style events (held occasionally), which only allow newcomers and up-and-coming players.
+                    Some tournaments may require pre-registration, but anyone can pre-register. Check with each individual event to see which ones are Arcadians or require pre-registration.</p>
 
                     <h3>I don’t think I’m very good, should I go to a tournament?</h3>
-                    Yes! Smash has gotten huge over the last few years, and there are tournament communities all around the province. Traveling to tournaments far away can be expensive, but going to one in your own town is fairly inexpensive as a hobby.
-                    The only way to improve is to keep playing. See how you do! And if you get eliminated from the tournament, you can still stick around and play as many friendlies as you want with other people. Most people are more than happy to give you pointers, too. Nobody is going to judge anyone for their perceived skill level. Play lots of matches, make lots of friends, let us make it an unforgettable experience for you!
+                    <p>Yes! Smash has gotten huge over the last few years, and there are tournament communities all around the province. Traveling to tournaments far away can be expensive, but going to one in your own town is fairly inexpensive as a hobby.
+                    The only way to improve is to keep playing. See how you do! And if you get eliminated from the tournament, you can still stick around and play as many friendlies as you want with other people. Most people are more than happy to give you pointers, too. Nobody is going to judge anyone for their perceived skill level. Play lots of matches, make lots of friends, let us make it an unforgettable experience for you!</p>
 
                     <h3>What is a “smashfest”?</h3>
-                    It’s where a bunch of Smash players get together and just play casual matches with each other. Not a tournament, it’s all freeplay.
+                    <p>It’s where a bunch of Smash players get together and just play casual matches with each other. Not a tournament, it’s all freeplay.</p>
 
                     <h3>Do these things cost money?</h3>
-                    Generally, yes. Entrance to a Smash event usually consists of a venue fee, plus an event fee. Depending on the size of the tournament you may be paying anywhere up to 10 dollars for a day to 100 dollars for a weekend.
+                    <p>Generally, yes. Entrance to a Smash event usually consists of a venue fee, plus an event fee. Depending on the size of the tournament you may be paying anywhere up to 10 dollars for a day to 100 dollars for a weekend.
                     The venue fee is a set amount of money you pay to get into the actual location of the tournament, which is used to pay off the price we have to pay to use the building. Most smashfests and tournaments will have a venue fee.
                     The event fee applies to whatever brackets you want to participate in. If the tournament is having 3 events, but you only want to join 1 or 2 of them, you only pay for the events you want to enter.
                     So, for example, a tournament with a $5 venue fee that has a Melee bracket and a PM bracket each at $10 entry fee would cost you $25 if you want to play both events. If you only want to play one game or the other, it would cost you $15.
-                    Some smashfests and free tournaments have a venue fee, but no entry fee since there’s no tournament.
+                    Some smashfests and free tournaments have a venue fee, but no entry fee since there’s no tournament.</p>
 
                     <h3>How does the tournament work?</h3>
-                    Everyone shows up to the venue, pays the venue fee to the tournament organizer or venue owner to get into the building, and then pays the tournament entry fee to the tournament organizer for each game that they want to join (Singles, doubles, side event, whatever is there). Once registration closes, the tournament organizers seed the bracket (which means they rank everyone on perceived skill level and set up the bracket so that people who are historically the best do not face each other early). This means that newer players, for better or for worse, will likely face some of our region’s top talent at their first tournament – don’t get discouraged by this! Whether you win or lose, you’re going to learn and improve.
-                    Most tournaments are played in sets of best-of-3-games and are double elimination, which means you keep playing until you’ve lost TWO best-of-3 sets. (That means don’t leave when you lose a set, you’re still in the tournament!)
+                    <p>Everyone shows up to the venue, pays the venue fee to the tournament organizer or venue owner to get into the building, and then pays the tournament entry fee to the tournament organizer for each game that they want to join (Singles, doubles, side event, whatever is there). Once registration closes, the tournament organizers seed the bracket (which means they rank everyone on perceived skill level and set up the bracket so that people who are historically the best do not face each other early). This means that newer players, for better or for worse, will likely face some of our region’s top talent at their first tournament – don’t get discouraged by this! Whether you win or lose, you’re going to learn and improve.
+                    Most tournaments are played in sets of best-of-3-games and are double elimination, which means you keep playing until you’ve lost TWO best-of-3 sets. (That means don’t leave when you lose a set, you’re still in the tournament!)</p>
 
                     <h3>Which Smash game should I play?</h3>
-                    Whichever one(s) you like the best! It all depends on personal preference and what playstyles you find the most enjoyable. Alberta in particular has a active Smash community for every game in the series as well as Project M, so there’s lots to choose from. Check the Facebook groups for your region to see what games are the most popular.
-                    If you’re just getting into Smash, try attending an event for each game, and try them all out. Some people play every Smash game competitively, while others only stick to one or two. While in the global Smash community there is some hostility between game-specific communities, here in Alberta people are generally respectful of each other’s choices.
+                    <p>Whichever one(s) you like the best! It all depends on personal preference and what playstyles you find the most enjoyable. Alberta in particular has a active Smash community for every game in the series as well as Project M, so there’s lots to choose from. Check the Facebook groups for your region to see what games are the most popular.
+                    If you’re just getting into Smash, try attending an event for each game, and try them all out. Some people play every Smash game competitively, while others only stick to one or two. While in the global Smash community there is some hostility between game-specific communities, here in Alberta people are generally respectful of each other’s choices.</p>
 
                     <h3>Will I be the only person of (certain gender/race/age group/etc)?</h3>
-                    Most likely not. The Smash community in Alberta is very diverse.
+                    <p>Most likely not. The Smash community in Alberta is very diverse.</p>
                 </Panel>
                 <Panel header="Melee Ruleset" eventKey="2">
                 <h3>General Rules</h3>

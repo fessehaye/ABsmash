@@ -10,8 +10,8 @@ class Header extends Component {
         return (
             
                 <div >
-                    <img className="img-responsive" src={banner} role="presentation" style={{objectFit: 'cover',width: '100%'}}/>
-                    <Affix affixStyle={{width:"100%",top: 0, zIndex:25}} offsetTop={250} >
+                    <img className="img-responsive" src={banner} role="presentation" style={{objectFit: 'cover',width: '100%',maxHeight: "415"}}/>
+                    <Affix affixStyle={{width:"100%",top: 0, zIndex:25}} offsetTop={480} >
                         <Navbar collapseOnSelect className="mainMenu">
                             <Navbar.Header >
                                 <Navbar.Toggle />

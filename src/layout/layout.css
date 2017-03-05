@@ -27,14 +27,51 @@
 
 
 nav {
-    background-color: #002F63 !important;
+    background-color: #1986FF !important; 
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
 }
+.navbar{
+    border: none;
+    
+}
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#0079FF !important;
+}
+
+.navbar-default .navbar-toggle {
+    background-color:#0079FF !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: white;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: none;
+}
+
 
 .bodyContent {
     padding-bottom: 350px;
-    margin-top: 20px;
 }
 
 .clickable {
     cursor: pointer;
+}
+
+.panel-primary > .panel-heading {
+     background-color:#0079FF !important;
 }
