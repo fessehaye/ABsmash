@@ -11,12 +11,6 @@ const event_format = {
   "s4": "Wii U",
   "64": "Smash 64"
 };
-const event_class = {
-  "project m": "pM",
-  "melee":"Melee",
-  "s4": "S4",
-  "64": "S64"
-}
 
 const tooltipRegional = (
   <Tooltip id="tooltip"><strong>Out of Region Attendance Expected!</strong></Tooltip>
@@ -42,9 +36,7 @@ class smashCarousel extends Component {
                       <div className="gameEvent">
                           {
                             event.get('events').map((games,index2) => {
-                                return (<div className={event_class[games]} key={index2 + "b"}>
-                                          <h5>{event_format[games]}</h5>
-                                        </div>)
+                                return (<h2 key={index2 + "b"} >{event_format[games]}</h2>)
                             })
                           }
                       </div>

@@ -32,7 +32,7 @@
     .cgyLocation {
         display:none;
     }
-    .gameEvent div{
+    .gameEvent {
         display:none !important;
     }
     span.tourneyWarning.glyphicon.glyphicon.glyphicon-exclamation-sign {
@@ -85,17 +85,22 @@
    display: flex;
    -webkit-flex-direction: row;
    flex-direction: row;
-   
+   align-content: space-between;
+   padding: 5px;
+   padding-right: 25px;
+   background: rgba(0,0,0,0.6);
+   text-shadow: none;
+   color: #fff;
+   font-variant: small-caps;
 }
 
-.gameEvent div {
-    display: inline;
-    text-align: center;
-    border-radius: 25px;
-    margin-right: 10px;
-    padding: 5px;
-    border: 2px solid white;
-    color: #fff;
+.gameEvent h2:not(:first-child) {
+    border-left: 5px solid #FFA200;
+}
+
+.gameEvent h2 {
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 span.tourneyWarning.glyphicon.glyphicon.glyphicon-exclamation-sign {
@@ -103,18 +108,3 @@ span.tourneyWarning.glyphicon.glyphicon.glyphicon-exclamation-sign {
     z-index: 10;
 }
 
-
-
-
-.pM{
-    background-color: #B493C5;
-}
-.Melee{
-    background-color: #F0092B;
-}
-.S4{
-    background-color: #002F63;
-}
-.S64{
-    background-color: #1ea03f;
-}

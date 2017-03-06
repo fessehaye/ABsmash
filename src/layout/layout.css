@@ -26,13 +26,17 @@
 }
 
 
+
 nav {
     background-color: #1986FF !important; 
     font-variant: small-caps;
+    font-family: Montserrat, sans-serif;
+    text-transform: lowercase;
     letter-spacing: 0.1em;
 }
 .navbar{
     border: none;
+    
     
 }
 /* Add a gray color to all navbar links */

@@ -3,6 +3,8 @@ import {Grid,Row,Form,FormGroup,FormControl,Jumbotron} from 'react-bootstrap';
 import Airtable from 'airtable';
 import SmashModal from '../components/smashModal';
 import Card from '../components/smashEvent';
+import Switch from 'react-bootstrap-switch';
+import './react-bootstrap-switch.css';
 
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 
@@ -32,7 +34,7 @@ class Event extends Component {
         view: 'Main View',
         sort: [
             {field: 'Forced Order', direction: 'desc'},
-            {field: 'start date', direction: 'desc'}
+            {field: 'start date', direction: 'asc'}
         ]
     }
     if(!this.state.oldPost){
@@ -78,8 +80,24 @@ class Event extends Component {
                   type="text"
                   placeholder="Search"
                   value={this.state.searchText}
-                  onChange={(e) => (this.setState({searchText:e.target.value.toLowerCase()}))}
+                  onChange={(e) => (
+                    this.setState({searchText:e.target.value.toLowerCase()})
+                  )}
                   />
+              </FormGroup>
+              <FormGroup>
+                <h3>
+                  View Old Events? &nbsp;
+                  <Switch
+                    onText="Yes"
+                    offText="No"
+                    value={this.state.oldPost}
+                    onChange={ () => {
+                      this.setState({oldPost:!this.state.oldPost});
+                      this.loadData();
+                      }}
+                  />
+                </h3>
               </FormGroup>
             </Form>
           </Row>

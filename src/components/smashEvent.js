@@ -10,12 +10,7 @@ const event_format = {
   "s4": "Wii U",
   "64": "Smash 64"
 };
-const event_class = {
-  "project m": "pM",
-  "melee":"Melee",
-  "s4": "S4",
-  "64": "S64"
-}
+
 
 class smashEvent extends Component {
 
@@ -32,9 +27,9 @@ class smashEvent extends Component {
                   <div className="gameEvent3">
                       {
                         event.get('events').map((games,index2) => {
-                            return (<div className={event_class[games]} key={index2 + "b"}>
-                                      <h5>{event_format[games]}</h5>
-                                    </div>)
+                            return (
+                                      <h3 key={index2 + "b"}>{event_format[games]}</h3>
+                                    )
                         })
                       }
                   </div>

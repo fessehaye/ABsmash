@@ -9,12 +9,6 @@ const event_format = {
   "s4": "Wii U",
   "64": "Smash 64"
 };
-const event_class = {
-  "project m": "pM",
-  "melee":"Melee",
-  "s4": "S4",
-  "64": "S64"
-}
 
 class SmashModal extends Component {
   render() {
@@ -38,11 +32,12 @@ class SmashModal extends Component {
                 </Row>
                 
                 <Row>
-                    <Col md={6}>
-                        <h3>City:</h3>
-                        <p>{this.props.selected ? this.props.selected.get('City') : 'N/A'}</p>
+                    <Col md={12}>
+                        <h3>City: 
+                            <span> {this.props.selected ? this.props.selected.get('City') : 'N/A'}</span>
+                        </h3>
                     </Col>
-                    <Col md={6}>
+                    <Col md={12}>
                         <h3>Address:</h3>
                         <p>{this.props.selected ? this.props.selected.get('Address') : 'N/A'}</p>
                     </Col>
@@ -55,9 +50,7 @@ class SmashModal extends Component {
                             {
                                 this.props.selected ?
                                 this.props.selected.get('events').map((games,index2) => {
-                                    return (<div className={event_class[games]} key={index2 + "b"}>
-                                            <h5>{event_format[games]}</h5>
-                                            </div>)
+                                    return (<h2 key={index2 + "b"}>{event_format[games]}</h2>)
                                 })
                                 : "N/A"
                             }
@@ -80,7 +73,7 @@ class SmashModal extends Component {
                     <Col md={12}>
                         <Accordion>
                             <Panel header="More Detail..." eventKey="1">
-                                <div>{this.props.selected 
+                                <div style={{fontFamily:"Lato"}}>{ this.props.selected && this.props.selected.fields.notes 
                                         ? this.props.selected.get('Notes').split("\n").map(function(item, key) {
                                             return (
                                                 <span key={key}>

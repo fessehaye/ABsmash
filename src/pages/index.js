@@ -26,7 +26,7 @@ class Main extends Component {
         view: 'Main View',
         sort: [
             {field: 'Forced Order', direction: 'desc'},
-            {field: 'start date', direction: 'desc'}
+            {field: 'start date', direction: 'asc'}
         ],
         filterByFormula: 'AND(IS_BEFORE(TODAY(),{start date}),Approved = 1)',
         maxRecords: 7
