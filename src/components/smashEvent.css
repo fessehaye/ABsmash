@@ -24,3 +24,9 @@
     border-right: 2px solid #e2e2de;
     border-bottom: 2px solid #e2e2de;
 }
+
+@media screen and (max-width: 525px) {
+    .gameEvent3  {
+        display:none;
+    }
+}

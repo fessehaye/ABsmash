@@ -4,9 +4,23 @@ import Airtable from 'airtable';
 import SmashModal from '../components/smashModal';
 import Card from '../components/smashEvent';
 import Switch from 'react-bootstrap-switch';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 import './react-bootstrap-switch.css';
+import './events.css';
 
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
+const CITY = [
+	{ label: 'Edmonton', value: 'Edmonton' },
+	{ label: 'Calgary', value: 'Calgary' },
+	{ label: 'Others', value: 'Others' }
+];
+const GAMES = [
+	{ label: 'Melee', value: 'melee' },
+	{ label: 'Wii U', value: 's4' },
+	{ label: 'Project M', value: 'project m' },
+  { label: 'Smash 64', value: '64' }
+];
 
 class Event extends Component {
   constructor(props) {
@@ -17,7 +31,9 @@ class Event extends Component {
       showModal: false,
       selected: null,
       searchText: '',
-      oldPost: false
+      oldPost: false,
+      city: '',
+      games: ''
     };
 
     this.close = this.close.bind(this);
@@ -64,9 +80,13 @@ class Event extends Component {
     let filteredEvents= this.state.events.filter(
       (event) => {
         if(event){
-          return event.get('Name').toLowerCase().includes(this.state.searchText);
+          if(event.get('events').indexOf(this.state.games) > -1 || !this.state.games){
+            if(event.get('City') === this.state.city || !this.state.city){
+              return event.get('Name').toLowerCase().includes(this.state.searchText);
+            }
+          }
         }
-        return true;
+        return false;
       }
     );
 
@@ -86,7 +106,35 @@ class Event extends Component {
                   />
               </FormGroup>
               <FormGroup>
-                <h3>
+                <span style={{fontSize:20,width:'25%'}}>
+                  &nbsp;City? 
+                </span>
+                <Select                    
+                    simpleValue
+                    value={this.state.city}
+                    options={CITY}
+                    onChange={ (value) => {
+                      this.setState({city:value});
+                    }}
+                  />
+              </FormGroup>
+              <FormGroup>
+                <span style={{fontSize:20,width:'25%'}}>
+                  &nbsp;Games? 
+                </span>
+                <Select
+                    simpleValue
+                    value={this.state.games}
+                    options={GAMES}
+                    onChange={ 
+                      (value) => {
+                        this.setState({games:value});
+                      }
+                    }
+                  />
+              </FormGroup>
+              <FormGroup>
+                <h4 style={{textAlign:'right'}}>
                   View Old Events? &nbsp;
                   <Switch
                     onText="Yes"
@@ -97,15 +145,17 @@ class Event extends Component {
                       this.loadData();
                       }}
                   />
-                </h3>
+                </h4>
               </FormGroup>
             </Form>
           </Row>
           <Row>
             {
-              filteredEvents.map((event,index) => {
-                    return (<div key={index} className="clickable"><Card event={event} open={this.open}/></div>)
-              })
+              filteredEvents.length > 0 ? 
+                filteredEvents.map((event,index) => {
+                      return (<div key={index} className="clickable"><Card event={event} open={this.open}/></div>)
+                }) :
+                <h3>No Events Found...</h3>
             }
           </Row>
         </Jumbotron>
