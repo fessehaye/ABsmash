@@ -7,6 +7,7 @@
    padding-right: 25px;
    text-shadow: none;
    font-variant: small-caps;
+   flex-wrap: wrap;
 }
 
 .gameEvent3 h3:not(:first-child) {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Col,Row,Modal,Button,Accordion,Panel} from 'react-bootstrap';
 import moment from 'moment';
+import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
+import 'whatwg-fetch';
 import './smashModal.css';
 
 const event_format = {
@@ -11,6 +13,38 @@ const event_format = {
 };
 
 class SmashModal extends Component {
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      location: {}
+    };
+
+    this.addLocation = this.addLocation.bind(this);
+
+  }
+
+  addLocation = (location) => {
+    this.setState(location);
+  }
+
+  componentDidMount = () => {
+    let PostalCode = this.props.selected ? this.props.selected.get('Address') : 'T6E0G2';
+    fetch('http://maps.googleapis.com/maps/api/geocode/json?address=' + PostalCode)
+    .then(function(response) {
+        return response.json()
+    }).then(function(json) {
+        if(json.results.length > 0){
+            this.addLocation({ location : json.results[0].geometry.location });
+        }
+    }).catch(function(ex) {
+        console.log('parsing failed', ex)
+    })
+  }
+
+  
+
   render() {
     return (
       <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}}>
@@ -73,7 +107,7 @@ class SmashModal extends Component {
                     <Col md={12}>
                         <Accordion>
                             <Panel header="More Detail..." eventKey="1">
-                                <div style={{fontFamily:"Lato"}}>{ this.props.selected && this.props.selected.fields.notes 
+                                <div style={{fontFamily:"Lato"}}>{ this.props.selected && this.props.selected.get('Notes') 
                                         ? this.props.selected.get('Notes').split("\n").map(function(item, key) {
                                             return (
                                                 <span key={key}>
