@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Col,Row,Modal,Button,Accordion,Panel} from 'react-bootstrap';
 import moment from 'moment';
-import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
+import {Gmaps, InfoWindow} from 'react-gmaps';
 import 'whatwg-fetch';
 import './smashModal.css';
 
@@ -12,6 +12,8 @@ const event_format = {
   "64": "Smash 64"
 };
 
+const params = {v: '3.exp', key: 'AIzaSyAExoxUrvOIqrwFVQL1E6XI2FW1VrUnofE'};
+
 class SmashModal extends Component {
 
   constructor(props) {
@@ -21,33 +23,33 @@ class SmashModal extends Component {
       location: {}
     };
 
-    this.addLocation = this.addLocation.bind(this);
 
   }
 
-  addLocation = (location) => {
-    this.setState(location);
-  }
-
-  componentDidMount = () => {
-    let PostalCode = this.props.selected ? this.props.selected.get('Address') : 'T6E0G2';
+  loadAddress = () => {
+    let PostalCode = this.props.selected ? this.props.selected.get('Postal Code') : 'T6E0G2';
     fetch('http://maps.googleapis.com/maps/api/geocode/json?address=' + PostalCode)
     .then(function(response) {
         return response.json()
-    }).then(function(json) {
+    }).then((json) => {
         if(json.results.length > 0){
-            this.addLocation({ location : json.results[0].geometry.location });
+            this.setState({ location : json.results[0].geometry.location });
         }
     }).catch(function(ex) {
         console.log('parsing failed', ex)
     })
   }
 
+  onMapCreated = (map) => {
+    map.setOptions({
+      disableDefaultUI: true
+    });
+  }
   
 
   render() {
     return (
-      <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}}>
+      <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}} onEnter={() => {this.loadAddress()}}>
               <Modal.Header closeButton>
                 <Modal.Title>{this.props.selected ? this.props.selected.get('Name') : '' }</Modal.Title>
               </Modal.Header>
@@ -72,8 +74,22 @@ class SmashModal extends Component {
                         </h3>
                     </Col>
                     <Col md={12}>
-                        <h3>Address:</h3>
-                        <p>{this.props.selected ? this.props.selected.get('Address') : 'N/A'}</p>
+                        <Gmaps
+                            width={'100%'}
+                            height={'300px'}
+                            lat={this.state.location.lat}
+                            lng={this.state.location.lng }
+                            zoom={17}
+                            loadingMessage={'Be happy'}
+                            params={params}
+                            onMapCreated={this.onMapCreated}>
+                            <InfoWindow
+                            lat={this.state.location.lat}
+                            lng={this.state.location.lng }
+                            content={this.props.selected ? this.props.selected.get("Postal Code") : "N/A"}
+                            onCloseClick={this.onCloseClick} />
+        
+                        </Gmaps>
                     </Col>
                 </Row>
 
