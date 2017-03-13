@@ -149,6 +149,7 @@ class Event extends Component {
               </FormGroup>
             </Form>
           </Row>
+          <br/>
           <Row>
             {
               filteredEvents.length > 0 ? 

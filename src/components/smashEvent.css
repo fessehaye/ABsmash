@@ -30,4 +30,12 @@
     .gameEvent3  {
         display:none;
     }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .dateHeader {
+        text-align: left !important;
+    }
 }
