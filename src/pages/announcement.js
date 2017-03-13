@@ -24,7 +24,7 @@ class Announcements extends Component {
       announcements: [],
       showModal: false,
       selected: null,
-      Audience: 'Edmonton'
+      Audience: ''
     };
 
     this.close = this.close.bind(this);
