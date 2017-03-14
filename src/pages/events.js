@@ -106,26 +106,22 @@ class Event extends Component {
                   />
               </FormGroup>
               <FormGroup>
-                <span style={{fontSize:20,width:'25%'}}>
-                  &nbsp;City? 
-                </span>
                 <Select                    
                     simpleValue
                     value={this.state.city}
                     options={CITY}
+                    placeholder="City?"
                     onChange={ (value) => {
                       this.setState({city:value});
                     }}
                   />
               </FormGroup>
               <FormGroup>
-                <span style={{fontSize:20,width:'25%'}}>
-                  &nbsp;Games? 
-                </span>
                 <Select
                     simpleValue
                     value={this.state.games}
                     options={GAMES}
+                    placeholder="Games?"
                     onChange={ 
                       (value) => {
                         this.setState({games:value});

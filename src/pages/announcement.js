@@ -82,13 +82,11 @@ class Announcements extends Component {
           <Row>
             <Form>
               <FormGroup>
-                <span style={{fontSize:16,width:'25%'}}>
-                  &nbsp;Audience? 
-                </span>
                 <Select
                     simpleValue
                     value={this.state.Audience}
                     options={Audience}
+                    placeholder="Audience?"
                     onChange={ 
                       (value) => {
                         this.setState({Audience:value});
