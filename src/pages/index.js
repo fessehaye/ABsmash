@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row,Jumbotron,Col,Glyphicon,Image} from 'react-bootstrap';
+import {Row,Jumbotron,Col,Glyphicon} from 'react-bootstrap';
 import Carousel from '../components/smashCarousel';
 import Airtable from 'airtable';
 import { SocialIcon } from 'react-social-icons';
