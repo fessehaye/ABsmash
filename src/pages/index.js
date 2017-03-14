@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {Grid,Row,Jumbotron} from 'react-bootstrap';
+import {Grid,Row,Jumbotron,Col,Glyphicon} from 'react-bootstrap';
 import Carousel from '../components/smashCarousel';
 import Airtable from 'airtable';
-
+import { SocialIcon } from 'react-social-icons';
+import { Link } from 'react-router';
+import './index.css';
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 
 class Main extends Component {
@@ -51,6 +53,7 @@ class Main extends Component {
 
   render() {
 
+    
     return (
       <div>
         <Carousel 
@@ -60,17 +63,41 @@ class Main extends Component {
             close={this.close}
             selected={this.state.selected}
           />
-        <Grid>
-        <Row>
-          <Jumbotron style={{textAlign:"center"}}>
-            <h1 >Welcome To The Edmonton Smash Community</h1>
-            <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
-            welcoming scenes for every installment of the hit Nintendo series. Browse around to
-             find information on our events and our players, and how you can get involved!</p>
+     
+        
+          <Jumbotron className="jumbotron customJumbo" style={{textAlign:"center"}}>
+            <Grid>
+              <Row>
+                <h1 >Welcome To The Edmonton Smash Community</h1>
+                <hr />
+                <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
+                welcoming scenes for every installment of the hit Nintendo series. Browse around to
+                find information on our events and our players, and how you can get involved!</p>
+              </Row>
+              <br />
+              <Row>
+                <Col md={6} xs={12}>
+                  <p>New to the community? Want to more about the competitive ruleset for your favorite game? Come check out our information section!</p>
+                  <p><Link to="/info"><Glyphicon glyph="arrow-right" /> Learn More</Link ></p>
+                </Col>
+                <Col md={6} xs={12}>
+                  <p>Ready to go to your first tourney? Forgot where the next out of city tourney is? Come check out our event section to be up to date!</p>
+                  <p><Link to="/events"><Glyphicon glyph="arrow-right" /> Learn More</Link ></p>
+                </Col> 
+              </Row>
+              <hr />
+              <Row>
+                <p>Learn about our growing organizations by joining our facebook group for further news and announcements!</p>
+                <p>For any questions or inquires, please email us and we will get back to you.</p>
+                <div className="socialList">
+                  <SocialIcon url="https://www.facebook.com/groups/edmontonsmash/" />
+                  <SocialIcon network="email" url="mailto:edmontonsmash@gmail.com" />
+                  <SocialIcon url="https://www.youtube.com/user/SSBUniversity" />
+                </div>           
+              </Row>
+            </Grid>
           </Jumbotron>
-        </Row>
 
-      </Grid>
       </div>
       
     );

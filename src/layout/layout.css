@@ -20,7 +20,7 @@
     }
 
     .bodyContent {
-        padding-bottom: 50px !important;
+        padding-bottom: 10px !important;
     }
 
 }
@@ -33,11 +33,10 @@ nav {
     font-family: Montserrat, sans-serif;
     text-transform: lowercase;
     letter-spacing: 0.1em;
+    
 }
 .navbar{
     border: none;
-    
-    
 }
 /* Add a gray color to all navbar links */
 .navbar li a, .navbar .navbar-brand { 

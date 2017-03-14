@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Col,Row,Modal,Button,Accordion,Panel} from 'react-bootstrap';
 import moment from 'moment';
 import {Gmaps, InfoWindow} from 'react-gmaps';
+import ReactMarkdown from 'react-markdown';
 import 'whatwg-fetch';
 import './smashModal.css';
 
@@ -48,6 +49,7 @@ class SmashModal extends Component {
   
 
   render() {
+    let input = this.props.selected ? this.props.selected.get('Notes') : 'N/A';
     return (
       <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}} onEnter={() => {this.loadAddress()}}>
               <Modal.Header closeButton>
@@ -123,16 +125,7 @@ class SmashModal extends Component {
                     <Col md={12}>
                         <Accordion>
                             <Panel header="More Detail..." eventKey="1">
-                                <div style={{fontFamily:"Lato"}}>{ this.props.selected && this.props.selected.get('Notes') 
-                                        ? this.props.selected.get('Notes').split("\n").map(function(item, key) {
-                                            return (
-                                                <span key={key}>
-                                                {item}
-                                                <br/>
-                                                </span>
-                                            )
-                                            })
-                                        : 'N/A'}</div> 
+                                <div style={{fontFamily:"Lato"}}><ReactMarkdown source={input} /></div> 
                             </Panel>
                         </Accordion>
                     </Col>                   

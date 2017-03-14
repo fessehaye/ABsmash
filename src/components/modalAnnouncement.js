@@ -19,14 +19,6 @@ class SmashModal extends Component {
                 
                 <Row>
                     <Col md={12}>
-                        <h3> 
-                             <span> { this.props.selected ? moment(this.props.selected.get('Created On')).format('LL') : 'N/A'}</span>
-                        </h3>
-                    </Col>
-                </Row>
-                
-                <Row>
-                    <Col md={12}>
                         <ReactMarkdown source={input} />
                     </Col>
                 </Row>
@@ -34,7 +26,7 @@ class SmashModal extends Component {
                 <Row>
                     <Col md={12}>
                         <p>
-                            <span>- {this.props.selected ? this.props.selected.get('Author') : 'N/A'}</span>
+                            <span>- {this.props.selected ? this.props.selected.get('Author') : 'N/A'} { this.props.selected ? moment(this.props.selected.get('Created On')).format('LL') : 'N/A'}</span>
                         </p>
                     </Col>
                 </Row>

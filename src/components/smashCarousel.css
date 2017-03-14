@@ -5,9 +5,9 @@
     object-fit: cover;
 }
 
-.carousel {
+/*.carousel {
     margin-bottom: 21px;
-}
+}*/
 
 @media (min-width: 768px) {
     .carousel-caption {
