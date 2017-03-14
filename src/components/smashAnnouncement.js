@@ -14,7 +14,7 @@ class smashEvent extends Component {
                 <Row><h4 >{announcement.get('SubTitle')}</h4></Row>
            </Col>
            <Col md={4} sm={12}>
-                <Row><h3 className="dateHeader" style={{textAlign:"right"}}>{moment(announcement.get('Created On')).format('LL')}</h3></Row>
+                <h3 className="dateHeader" style={{textAlign:"right"}}>{moment(announcement.get('Created On')).format('LL')}</h3>
            </Col>
      </Panel>
     );

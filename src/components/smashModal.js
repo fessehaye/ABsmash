@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Col,Row,Modal,Button,Accordion,Panel} from 'react-bootstrap';
 import moment from 'moment';
-import {Gmaps, InfoWindow} from 'react-gmaps';
+import {Gmaps, InfoWindow, Circle} from 'react-gmaps';
 import ReactMarkdown from 'react-markdown';
 import 'whatwg-fetch';
 import './smashModal.css';
@@ -90,6 +90,11 @@ class SmashModal extends Component {
                             lng={this.state.location.lng }
                             content={this.props.selected ? this.props.selected.get("Postal Code") : "N/A"}
                             onCloseClick={this.onCloseClick} />
+                            <Circle
+                            lat={this.state.location.lat}
+                            lng={this.state.location.lng }
+                            radius={20}
+                             />
         
                         </Gmaps>
                     </Col>
