@@ -16,3 +16,14 @@
 hr {
     border-top: 1px solid #444;
 }
+
+.sk-double-bounce {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.loadDiv {
+    display: flex;
+    justify-content: center;
+}

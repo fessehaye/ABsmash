@@ -86,7 +86,7 @@ class Announcements extends Component {
                     simpleValue
                     value={this.state.Audience}
                     options={Audience}
-                    placeholder="Audience?"
+                    placeholder="Audience"
                     onChange={ 
                       (value) => {
                         this.setState({Audience:value});

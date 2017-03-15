@@ -5,6 +5,7 @@ import SmashModal from '../components/smashModal';
 import Card from '../components/smashEvent';
 import Switch from 'react-bootstrap-switch';
 import Select from 'react-select';
+import _ from 'underscore';
 import 'react-select/dist/react-select.css';
 import './react-bootstrap-switch.css';
 import './events.css';
@@ -33,7 +34,7 @@ class Event extends Component {
       searchText: '',
       oldPost: false,
       city: '',
-      games: ''
+      games: []
     };
 
     this.close = this.close.bind(this);
@@ -80,7 +81,7 @@ class Event extends Component {
     let filteredEvents= this.state.events.filter(
       (event) => {
         if(event){
-          if(event.get('events').indexOf(this.state.games) > -1 || !this.state.games){
+          if(_.difference(this.state.games,event.get('events')).length === 0 || this.state.games.length === 0){
             if(event.get('City') === this.state.city || !this.state.city){
               return event.get('Name').toLowerCase().includes(this.state.searchText);
             }
@@ -110,7 +111,7 @@ class Event extends Component {
                     simpleValue
                     value={this.state.city}
                     options={CITY}
-                    placeholder="City?"
+                    placeholder="City"
                     onChange={ (value) => {
                       this.setState({city:value});
                     }}
@@ -118,12 +119,14 @@ class Event extends Component {
               </FormGroup>
               <FormGroup>
                 <Select
+                    multi
                     simpleValue
                     value={this.state.games}
                     options={GAMES}
-                    placeholder="Games?"
+                    placeholder="Games"
                     onChange={ 
                       (value) => {
+                        value = value ? value.split(',') : [];
                         this.setState({games:value});
                       }
                     }
@@ -131,7 +134,7 @@ class Event extends Component {
               </FormGroup>
               <FormGroup>
                 <h4 style={{textAlign:'right'}}>
-                  View Old Events? &nbsp;
+                  View Old Events &nbsp;
                   <Switch
                     onText="Yes"
                     offText="No"

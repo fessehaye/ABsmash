@@ -42,59 +42,80 @@ class Information extends Component {
                     <h3>Will I be the only person of (certain gender/race/age group/etc)?</h3>
                     <p>Most likely not. The Smash community in Alberta is very diverse.</p>
                 </Panel>
-                <Panel header="Melee Ruleset" eventKey="2">
-                <h3>General Rules</h3>
-                <ul>
-                    <li>Game Settings: 4 Stocks, 8 Minute Time Limit</li>
-                    <li>Items are disabled.</li>
-                    <li>Stalling with moves such as Jigglypuff's Rising Pound or Peach's Wall Bomber is banned</li>
-                    <li>Glitches such as Ice Climbers’s Freeze Glitch and Mewtwo’s Soul Stunner are banned.</li>
-                    <li>Pause option is disabled in the game menu. If left on, accidental pausing mid match forfeits a stock.</li>
-                    <li>You may not choose any stage you have won on during a set, unless agreed by both players.
-                    A tie is determined by most stocks, and then if still tied, by percentage. If percentage is tied, the match is fully replayed.
-                    Playing as Master Hand is banned</li>
-                </ul>
+                <Panel header="CASE Details/Membership" eventKey="2">
+                    
+                    <p>CASE is located at 9910 67
+                        Ave, and is a clean and
+                        comfortable 5000 sq. venue that
+                        can hold up to 450 players.
+                        Events start Friday nights at 6 PM
+                        and end at 11 PM. The nightly
+                        venue fee for joining a paid bracket
+                        is $5, and a $20 membership gives
+                        you full access for 4 months.</p>
 
-                <h3>Doubles Rules</h3>
-                <ul>
-                    <li>Friendly Fire enabled</li>
-                    <li>Life stealing stocks from a teammate is allowed</li>
-                </ul>
+                        <p>
+                            Each player is required to bring their own controller to participate.
+                        </p>
 
-                <h3>Stage List</h3>
-                <h5>Neutral Stages</h5>
-                <ul>
-                    <li>Final Destination</li>
-                    <li>Battlefield</li>
-                    <li>Yoshi’s Story</li>
-                    <li>Dream Land</li>
-                    <li>Fountain of Dreams [Singles Only]</li>
-                    <li>Pokemon Stadium [Doubles Only]</li>
-                </ul>
-                <h5>Counter-Pick Stages</h5>
-                <ul><li>Pokemon Stadium [Singles Only]</li></ul>
-
-
-                <h3>Match Procedure</h3>
-                <ol>
-                    <li>Players select their characters. Either player may choose to Blind Pick. In this case, each player secretly tells a third player their character before picking with the third player verifying their selections.</li>
-                    <li>Players play Rock-Paper-Scissors. Winner chooses between selecting controller port or first Stage Strike</li>
-                    <li>Players take turns removing stages from the Neutral Stages list above based upon the results of the previous rule. The first player to strike removes one(1) stage from the list, the second player removes two(2), and the first player then chooses from the remaining two(2) stages.</li>
-                    <li>The players play the first match of the set</li>
-                    <li>Winning player of the preceding match bans a stage from the full list of stages, both Neutral and Counter-Pick. Does not apply to Best of 5 sets.</li>
-                    <li>The Losing player of the preceding match picks a stage for the next match. Cannot choose the stage banned in the previous step, nor a stage they've already won on during this set, unless agreed.</li>
-                    <li>The winning player of the preceding match may choose to change characters.</li>
-                    <li>The losing player of the preceding match may choose to change characters.</li>
-                    <li>The losing player of the preceding match may change their controller port.</li>
-                    <li>The next match is played</li>
-                    <li>Repeat Steps 5 through 10 for all subsequent matches until the set is complete.</li>
-                </ol>
-
-                <p>Stage Clause: A player/team may not counterpick any stage they previously won on during the set, unless agreed upon by the opponent.</p>
-                <p>Neutral Start: The following ports are to be used when a player/team invokes the neutral start clause. Any necessary port combinations must be enforced by the neutral start invoking player for each different stage throughout the set.</p>
+                        <p>For the most current information about
+                        upcoming events, join our facebook
+                        group.</p>
 
                 </Panel>
-                <Panel header="Wii U Ruleset" eventKey="3">
+                <Panel header="Melee Ruleset" eventKey="3">
+                    <h3>General Rules</h3>
+                    <ul>
+                        <li>Game Settings: 4 Stocks, 8 Minute Time Limit</li>
+                        <li>Items are disabled.</li>
+                        <li>Stalling with moves such as Jigglypuff's Rising Pound or Peach's Wall Bomber is banned</li>
+                        <li>Glitches such as Ice Climbers’s Freeze Glitch and Mewtwo’s Soul Stunner are banned.</li>
+                        <li>Pause option is disabled in the game menu. If left on, accidental pausing mid match forfeits a stock.</li>
+                        <li>You may not choose any stage you have won on during a set, unless agreed by both players.
+                        A tie is determined by most stocks, and then if still tied, by percentage. If percentage is tied, the match is fully replayed.
+                        Playing as Master Hand is banned</li>
+                    </ul>
+
+                    <h3>Doubles Rules</h3>
+                    <ul>
+                        <li>Friendly Fire enabled</li>
+                        <li>Life stealing stocks from a teammate is allowed</li>
+                    </ul>
+
+                    <h3>Stage List</h3>
+                    <h5>Neutral Stages</h5>
+                    <ul>
+                        <li>Final Destination</li>
+                        <li>Battlefield</li>
+                        <li>Yoshi’s Story</li>
+                        <li>Dream Land</li>
+                        <li>Fountain of Dreams [Singles Only]</li>
+                        <li>Pokemon Stadium [Doubles Only]</li>
+                    </ul>
+                    <h5>Counter-Pick Stages</h5>
+                    <ul><li>Pokemon Stadium [Singles Only]</li></ul>
+
+
+                    <h3>Match Procedure</h3>
+                    <ol>
+                        <li>Players select their characters. Either player may choose to Blind Pick. In this case, each player secretly tells a third player their character before picking with the third player verifying their selections.</li>
+                        <li>Players play Rock-Paper-Scissors. Winner chooses between selecting controller port or first Stage Strike</li>
+                        <li>Players take turns removing stages from the Neutral Stages list above based upon the results of the previous rule. The first player to strike removes one(1) stage from the list, the second player removes two(2), and the first player then chooses from the remaining two(2) stages.</li>
+                        <li>The players play the first match of the set</li>
+                        <li>Winning player of the preceding match bans a stage from the full list of stages, both Neutral and Counter-Pick. Does not apply to Best of 5 sets.</li>
+                        <li>The Losing player of the preceding match picks a stage for the next match. Cannot choose the stage banned in the previous step, nor a stage they've already won on during this set, unless agreed.</li>
+                        <li>The winning player of the preceding match may choose to change characters.</li>
+                        <li>The losing player of the preceding match may choose to change characters.</li>
+                        <li>The losing player of the preceding match may change their controller port.</li>
+                        <li>The next match is played</li>
+                        <li>Repeat Steps 5 through 10 for all subsequent matches until the set is complete.</li>
+                    </ol>
+
+                    <p>Stage Clause: A player/team may not counterpick any stage they previously won on during the set, unless agreed upon by the opponent.</p>
+                    <p>Neutral Start: The following ports are to be used when a player/team invokes the neutral start clause. Any necessary port combinations must be enforced by the neutral start invoking player for each different stage throughout the set.</p>
+
+                </Panel>
+                <Panel header="Wii U Ruleset" eventKey="4">
                     <h3>Wii U Game Settings</h3>
 
                     <ul>
@@ -136,7 +157,7 @@ class Information extends Component {
                         <li>Glitches: Any glitches that freeze the game are banned, and the player who initiated the glitch is subject to forfeiture of the match.</li>
                     </ul>
                 </Panel>
-                <Panel header="Project M Ruleset" eventKey="4">
+                <Panel header="Project M Ruleset" eventKey="5">
                     TBA
                 </Panel>
             </Accordion>
