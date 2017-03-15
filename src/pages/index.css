@@ -17,6 +17,10 @@ hr {
     border-top: 1px solid #444;
 }
 
+.jumbotron>hr {
+    border-top-color: unset;
+}
+
 .sk-double-bounce {
     width: 80px;
     height: 80px;

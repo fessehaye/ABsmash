@@ -40,12 +40,6 @@ class SmashModal extends Component {
         console.log('parsing failed', ex)
     })
   }
-
-  onMapCreated = (map) => {
-    map.setOptions({
-      disableDefaultUI: true
-    });
-  }
   
 
   render() {
@@ -84,7 +78,7 @@ class SmashModal extends Component {
                             zoom={17}
                             loadingMessage={'Be happy'}
                             params={params}
-                            onMapCreated={this.onMapCreated}>
+                            >
                             <InfoWindow
                             lat={this.state.location.lat}
                             lng={this.state.location.lng }
