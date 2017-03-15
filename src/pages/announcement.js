@@ -13,7 +13,7 @@ const Audience = [
 	{ label: 'Edmonton', value: 'Edmonton' },
 	{ label: 'Calgary', value: 'Calgary' },
 	{ label: 'Others', value: 'Others' },
-    { label: 'All', value: 'All' }
+    { label: 'General News', value: 'All' }
 ];
 
 class Announcements extends Component {
