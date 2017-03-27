@@ -13,6 +13,7 @@ class Information extends Component {
         <Panel header={title} bsStyle="primary">
             <Accordion>
                 <Panel header="Newcomers" eventKey="1">
+
                     <h3>Who can join tournaments?</h3>
                     <p>Anyone! You don’t have to be a certain age or skill level to join a tournament in Alberta. The only exception is for Arcadian-style events (held occasionally), which only allow newcomers and up-and-coming players.
                     Some tournaments may require pre-registration, but anyone can pre-register. Check with each individual event to see which ones are Arcadians or require pre-registration.</p>
@@ -61,6 +62,10 @@ class Information extends Component {
                         <p>For the most current information about
                         upcoming events, join our facebook
                         group.</p>
+
+                        <div className="embed-responsive embed-responsive-16by9">
+                            <iframe className="embed-responsive-item" src="//www.youtube.com/embed/7A2iUozS97A"></iframe>
+                        </div>
 
                 </Panel>
                 <Panel header="Melee Ruleset" eventKey="3">
@@ -131,19 +136,20 @@ class Information extends Component {
                     <h5>Starter</h5>
 
                     <ul>
-                        <li>Battlefield/Miiverse *</li>
-                        <li>Final Destination</li>
+                        <li>Battlefield*</li>
+                        <li>Final Destination**</li>
                         <li>Lylat Cruise</li>
                         <li>Smashville</li>
                         <li>Town & City</li>
                     </ul>
                     <h5>Counterpick</h5>
                     <ul>
-                        <li>Dream Land 64</li>
-                        <li>Duck Hunt</li>
+                        <li>Dream Land 64*</li>
+                        <li>Omega Stages**</li>
                     </ul>
-                    * Miiverse is treated as Battlefield during the stage ban phase. If Battlefield is banned, then Miiverse is also banned, and vice versa.
-                    ** All Omega stages are banned.
+                    * Treated as Battlefield in striking phase. If Battlefield is struck, Dream Land 64 is also struck and vice-versa. 
+                    ** Treated as Final Destination in striking phase. If Final Destination is struck, Omega Stages are struck and vice versa. You may only choose the following Omega Stages: Midgar, Suzaku Castle and Wily Castle.
+
 
                     <h3>Wii U Details</h3>
                     <ul>
@@ -157,8 +163,65 @@ class Information extends Component {
                         <li>Glitches: Any glitches that freeze the game are banned, and the player who initiated the glitch is subject to forfeiture of the match.</li>
                     </ul>
                 </Panel>
-                <Panel header="Project M Ruleset" eventKey="5">
-                    TBA
+                <Panel header="Project M Ruleset (3.6)" eventKey="5">
+                    <h3>GENERAL RULES</h3>
+                    <ul>
+                        <li>Items off and set to none, 8 Minutes, 4 Stocks, Buffer off, auto-L cancelling off.</li>
+                        <li>No excessive stalling.</li>
+                        <li>Double blind character pick is offered at request (one player whispers their choice to a neutral 3rd party, then the other chooses, then the first player selects the character they originally whispered).</li>
+                        <li>DSR: You cannot counter pick to any stage you have won on.</li>
+                        <li>Gentleman's Clause: Any stage may be played on if both players agree to it.</li>
+                        <li>If a match times out, the winner is determined by remaining stocks, then lowest percentage on the same stock.</li>
+                        <li>If percentage is also tied, a 3 minute, 1 stock overtime match will be played. If that is also a tie (down to percent), the winner will be decided by Rock-Paper-Scissors.</li>
+                        <li>Pausing Results in a stock loss, at the discretion of the opponent.</li>
+                        <li>Winning player is not locked into the same character for the next match, but has to pick before loser selects character.</li>
+                        <li>If each player has one stock remaining and the match ends due to a suicide move (Ganon's side-B, DDD's swallow, holding someone in a grab on a platform as it moves out of the boundaries, etc.), the player who initiated the move wins.</li>
+                        <li>No Giga Bowser, No Warioman (SoPo is fine).</li>
+                    </ul>
+
+                    <h3>STAGE STRIKING</h3>
+                    <ul>
+                        <li>Rock-Paper-Scissors for first strike. The order is 1-2-2-1 (winner of RPS strikes one stages, loser strikes two stages, then the winner of RPS strikes the last stage).</li>
+                        <li>The stages for games 2+ are decided by winner of the previous game banning stages, then the loser choosing the stage, and then character select (winner, then loser).</li>
+                        <li>Best 1 out of 3 sets will have two bans. Best 3 out of 5 sets will have one ban.</li>
+                    </ul>
+
+                    <h3>Single Stages</h3>
+                    <h5>Starter Stages</h5>
+                    <ul>
+                        <li>Battlefield</li>
+                        <li>Delfino's Secret</li>
+                        <li>Pokemon Stadium 2</li>
+                        <li>Smashville</li>
+                        <li>Green Hill Zone</li>
+                    </ul>
+
+                    <h5>Counterpick Stages</h5>
+                    <ul>
+                        <li>Dreamland 64</li>
+                        <li>Final Destination</li>
+                        <li>Fountain of Dreams</li>
+                        <li>Warioland</li>
+                    </ul>
+
+                    <h3>Doubles Stages</h3>
+                    <h5>Starter Stages</h5>
+                    <ul>
+                        <li>Battlefield</li>
+                        <li>Dreamland 64</li>
+                        <li>Pokemon Stadium 2</li>
+                        <li>Smashville</li>
+                        <li>Green Hill Zone</li>
+                    </ul>
+
+                    <h5>Counterpick Stages</h5>
+                    <ul>
+                        <li>Delfino's Secret</li>
+                        <li>Final Destination</li>
+                        <li>Fountain of Dreams</li>
+                        <li>Norfair</li>
+                    </ul>
+
                 </Panel>
             </Accordion>
         </Panel>

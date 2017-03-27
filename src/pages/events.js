@@ -6,6 +6,7 @@ import Card from '../components/smashEvent';
 import Switch from 'react-bootstrap-switch';
 import Select from 'react-select';
 import _ from 'underscore';
+import Spinner from 'react-spinkit';
 import 'react-select/dist/react-select.css';
 import './react-bootstrap-switch.css';
 import './events.css';
@@ -34,7 +35,8 @@ class Event extends Component {
       searchText: '',
       oldPost: false,
       city: '',
-      games: []
+      games: [],
+      complete:false
     };
 
     this.close = this.close.bind(this);
@@ -59,7 +61,7 @@ class Event extends Component {
     }
     base('Events').select(query).firstPage((err, records) => {
         if (err) { console.error(err); return; }
-        this.setState({events: records, selected:records[0]});
+        this.setState({events: records, selected:records[0],complete:true});
     });
   }
 
@@ -154,8 +156,13 @@ class Event extends Component {
               filteredEvents.length > 0 ? 
                 filteredEvents.map((event,index) => {
                       return (<div key={index} className="clickable"><Card event={event} open={this.open}/></div>)
-                }) :
-                <h3>No Events Found...</h3>
+                }) :              
+                this.state.complete ? 
+                  <h3>No Events Found...</h3> :
+                  <div className="loadDiv">
+                    <Spinner spinnerName='double-bounce' />
+                  </div>
+                  
             }
           </Row>
         </Jumbotron>

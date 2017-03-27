@@ -4,6 +4,7 @@ import Airtable from 'airtable';
 import SmashModal from '../components/modalAnnouncement';
 import Card from '../components/smashAnnouncement';
 import Select from 'react-select';
+import Spinner from 'react-spinkit';
 import 'react-select/dist/react-select.css';
 
 
@@ -24,7 +25,8 @@ class Announcements extends Component {
       announcements: [],
       showModal: false,
       selected: null,
-      Audience: ''
+      Audience: '',
+      complete: false
     };
 
     this.close = this.close.bind(this);
@@ -48,7 +50,7 @@ class Announcements extends Component {
     
     base('Announcements').select(query).firstPage((err, records) => {
         if (err) { console.error(err); return; }
-        this.setState({announcements: records, selected:records[0]});
+        this.setState({announcements: records, selected:records[0],complete:true});
     });
   }
 
@@ -103,7 +105,11 @@ class Announcements extends Component {
                 filteredEvents.map((announcement,index) => {
                       return (<div key={index} className="clickable"><Card announcement={announcement} open={this.open}/></div>)
                 }) :
-                <h3>No Announcements Found...</h3>
+                this.state.complete ? 
+                  <h3>No Announcements Found...</h3> :
+                  <div className="loadDiv">
+                    <Spinner spinnerName='double-bounce' />
+                  </div>
             }
           </Row>
         </Jumbotron>
