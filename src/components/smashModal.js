@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Col,Row,Modal,Button,Accordion,Panel} from 'react-bootstrap';
 import moment from 'moment';
-import {Gmaps, InfoWindow, Circle} from 'react-gmaps';
 import ReactMarkdown from 'react-markdown';
+import { withGoogleMap,Marker,GoogleMap } from "react-google-maps";
 import 'whatwg-fetch';
 import './smashModal.css';
 
@@ -13,7 +13,6 @@ const event_format = {
   "64": "Smash 64"
 };
 
-const params = {v: '3.exp', key: 'AIzaSyAExoxUrvOIqrwFVQL1E6XI2FW1VrUnofE'};
 
 class SmashModal extends Component {
 
@@ -21,7 +20,12 @@ class SmashModal extends Component {
     super(props);
     
     this.state = {
-      location: {}
+      location: [{
+        position: {
+            lat: 0,
+            lng: 0,
+        }
+        }]
     };
 
 
@@ -34,7 +38,7 @@ class SmashModal extends Component {
         return response.json()
     }).then((json) => {
         if(json.results.length > 0){
-            this.setState({ location : json.results[0].geometry.location });
+            this.setState({ location : [{position :json.results[0].geometry.location}] });
         }
     }).catch(function(ex) {
         console.log('parsing failed', ex)
@@ -44,6 +48,25 @@ class SmashModal extends Component {
 
   render() {
     let input = this.props.selected ? this.props.selected.get('Notes') : 'N/A';
+    // Wrap all `react-google-maps` components with `withGoogleMap` HOC
+    // and name it GettingStartedGoogleMap
+    const GettingStartedGoogleMap = withGoogleMap(props => (
+    <GoogleMap
+        ref={props.onMapLoad}
+        defaultZoom={17}
+        defaultCenter={{ lat: this.state.location[0].position.lat, lng: this.state.location[0].position.lng }}
+        onClick={props.onMapClick}
+    >
+        {props.markers.map((marker, index) => (
+        <Marker
+            {...marker}
+            onRightClick={() => props.onMarkerRightClick(index)}
+            key={index}
+        />
+        ))}
+    </GoogleMap>
+    ));
+
     return (
       <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}} onEnter={() => {this.loadAddress()}}>
               <Modal.Header closeButton>
@@ -70,27 +93,18 @@ class SmashModal extends Component {
                         </h3>
                     </Col>
                     <Col md={12}>
-                        <Gmaps
-                            width={'100%'}
-                            height={'300px'}
-                            lat={this.state.location.lat}
-                            lng={this.state.location.lng }
-                            zoom={17}
-                            loadingMessage={'Be happy'}
-                            params={params}
-                            >
-                            <InfoWindow
-                            lat={this.state.location.lat}
-                            lng={this.state.location.lng }
-                            content={this.props.selected ? this.props.selected.get("Postal Code") : "N/A"}
-                            onCloseClick={this.onCloseClick} />
-                            <Circle
-                            lat={this.state.location.lat}
-                            lng={this.state.location.lng }
-                            radius={20}
-                             />
-        
-                        </Gmaps>
+                         <GettingStartedGoogleMap
+                            containerElement={
+                                <div style={{ height: `300px`,width : "100%" }} />
+                            }
+                            mapElement={
+                                <div style={{ height: `300px`,width : "100%" }} />
+                            }
+                            onMapLoad={this.handleMapLoad}
+                        
+                            markers={this.state.location}
+                            />
+                       
                     </Col>
                 </Row>
 

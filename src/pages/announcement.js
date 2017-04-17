@@ -106,7 +106,7 @@ class Announcements extends Component {
                       return (<div key={index} className="clickable"><Card announcement={announcement} open={this.open}/></div>)
                 }) :
                 this.state.complete ? 
-                  <h3>No Announcements Found...</h3> :
+                  <h3 style={{textAlign: 'center',fontVariant:'small-caps'}}>No Announcements Found...</h3> :
                   <div className="loadDiv">
                     <Spinner spinnerName='double-bounce' />
                   </div>

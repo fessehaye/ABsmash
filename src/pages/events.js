@@ -9,7 +9,6 @@ import _ from 'underscore';
 import Spinner from 'react-spinkit';
 import 'react-select/dist/react-select.css';
 import './react-bootstrap-switch.css';
-import './events.css';
 
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 const CITY = [
@@ -158,7 +157,7 @@ class Event extends Component {
                       return (<div key={index} className="clickable"><Card event={event} open={this.open}/></div>)
                 }) :              
                 this.state.complete ? 
-                  <h3>No Events Found...</h3> :
+                  <h3 style={{textAlign: 'center',fontVariant:'small-caps'}}>No Events Found...</h3> :
                   <div className="loadDiv">
                     <Spinner spinnerName='double-bounce' />
                   </div>

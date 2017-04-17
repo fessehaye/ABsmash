@@ -4,13 +4,18 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Affix } from 'react-overlays';
 import './header.css';
 import banner from './banner2.jpg';
+import logo from './esc.png';
 
 class Header extends Component {
     render() {
         return (
             
                 <div >
-                    <img className="img-responsive" src={banner} role="presentation" style={{objectFit: 'cover',width: '100%',maxHeight: "415px"}}/>
+                    <div>
+                        <img className="img-responsive" src={banner} role="presentation" style={{objectFit: 'cover',width: '100%',maxHeight: "415px"}}/>
+                        <img className="img-responsive" src={logo} role="presentation" style={{position: 'absolute',top: '10px',right: "35px",width:"15%"}}/>
+                    </div>
+                    
                     <Affix affixStyle={{width:"100%",top: 0, zIndex:25}} offsetTop={480} >
                         <Navbar collapseOnSelect className="mainMenu">
                             <Navbar.Header >

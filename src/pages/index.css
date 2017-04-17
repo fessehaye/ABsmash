@@ -31,3 +31,14 @@ hr {
     display: flex;
     justify-content: center;
 }
+
+p {
+    font-size: 16px;
+    font-family: Lato !important;
+}
+.jumbotron h1{
+    font-variant: small-caps;
+    font-family: glacial !important;
+    font-size: 50px !important;
+    letter-spacing: 0.1em;
+}

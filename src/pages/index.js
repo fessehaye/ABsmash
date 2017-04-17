@@ -55,11 +55,7 @@ class Main extends Component {
   }
 
   render() {
-
-    
-    return (
-      <div>
-        {this.state.complete ? 
+    let carousel = this.state.complete ? 
           <Carousel 
             events={this.state.events}
             showModal={this.state.showModal}
@@ -69,8 +65,13 @@ class Main extends Component {
           /> :
           <div className="loadDiv">
             <Spinner spinnerName='double-bounce' />
-          </div>
-          }
+          </div>;
+    
+    carousel = this.state.events.length > 0 ? carousel : null
+    
+    return (
+      <div>
+        {carousel }
           
           <Jumbotron className="jumbotron customJumbo" style={{textAlign:"center"}}>
             
