@@ -14,7 +14,6 @@
     "react-bootstrap": "^0.30.7",
     "react-bootstrap-switch": "^15.0.4",
     "react-dom": "^15.4.2",
-    "react-gmaps": "^1.5.0",
     "react-google-maps": "^6.0.1",
     "react-markdown": "^2.4.5",
     "react-overlays": "^0.6.11",
