@@ -104,7 +104,7 @@ class Main extends Component {
               <hr />
               <Row>
                 <Col md={6} xs={12}>
-                  <p>New to the community? Want to more about the competitive ruleset for your favorite game? Come check out our information section!</p>
+                  <p>New to the community? Want to learn more about the competitive ruleset for your favorite game? Come check out our information section!</p>
                   <p><Link to="/info"><Glyphicon glyph="arrow-right" /> Learn More</Link ></p>
                 </Col>
                 <Col md={6} xs={12}>
