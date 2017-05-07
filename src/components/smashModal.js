@@ -48,6 +48,11 @@ class SmashModal extends Component {
 
   render() {
     let input = this.props.selected ? this.props.selected.get('Notes') : 'N/A';
+    let locationCode = this.props.selected ? this.props.selected.get('Postal Code') : 'null';
+    let dateStyle ={
+        display: 'flex',
+        justifyContent: 'space-around'
+    }
     // Wrap all `react-google-maps` components with `withGoogleMap` HOC
     // and name it GettingStartedGoogleMap
     const GettingStartedGoogleMap = withGoogleMap(props => (
@@ -70,30 +75,27 @@ class SmashModal extends Component {
     return (
       <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}} onEnter={() => {this.loadAddress()}}>
               <Modal.Header closeButton>
-                <Modal.Title>{this.props.selected ? this.props.selected.get('Name') : '' }</Modal.Title>
+                <Modal.Title>
+                    {this.props.selected ? this.props.selected.get('Name') : '' } 
+                    &nbsp;[{this.props.selected ? this.props.selected.get('City') : 'N/A'}]
+                </Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Row>
-                    <Col md={6}>
-                        <h3>Start Date: 
+                    <Col md={12}>
+                        <h4 style={dateStyle}> 
                              <span> { this.props.selected ? moment(this.props.selected.get('start date')).format('LLL') : 'N/A'}</span>
-                        </h3>
-                    </Col>
-                    <Col md={6}>
-                        <h3>End Date: 
-                            <span> { this.props.selected ? moment(this.props.selected.get('end date')).format('LLL') : 'N/A'}</span>
-                        </h3>
+                             <span> { this.props.selected ? moment(this.props.selected.get('end date')).format('LLL') : 'N/A'}</span>
+                        </h4>
                     </Col>
                 </Row>
                 
                 <Row>
+                    
                     <Col md={12}>
-                        <h3>City: 
-                            <span> {this.props.selected ? this.props.selected.get('City') : 'N/A'}</span>
-                        </h3>
-                    </Col>
-                    <Col md={12}>
-                         <GettingStartedGoogleMap
+                        {
+                            locationCode
+                             ? <GettingStartedGoogleMap
                             containerElement={
                                 <div style={{ height: `300px`,width : "100%" }} />
                             }
@@ -104,14 +106,16 @@ class SmashModal extends Component {
                         
                             markers={this.state.location}
                             />
+                             : null
+                        }
+                         
                        
                     </Col>
                 </Row>
 
                 <Row>
                     <Col md={12}>
-                        <h3>Games:</h3>
-                        <div className="gameEvent2">
+                        <div style={{marginTop:10, justifyContent:'center'}}className="gameEvent2">
                             {
                                 this.props.selected ?
                                 this.props.selected.get('events').map((games,index2) => {
@@ -138,7 +142,7 @@ class SmashModal extends Component {
                     <Col md={12}>
                         <Accordion>
                             <Panel header="More Detail..." eventKey="1">
-                                <div style={{fontFamily:"Lato"}}><ReactMarkdown source={input} /></div> 
+                                <div style={{fontFamily:"Lato",wordWrap:'break-word'}}><ReactMarkdown source={input} /></div> 
                             </Panel>
                         </Accordion>
                     </Col>                   
