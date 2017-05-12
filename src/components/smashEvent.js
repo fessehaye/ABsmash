@@ -17,7 +17,7 @@ class smashEvent extends Component {
   render() {
     let event = this.props.event;
     return (
-      <Panel onClick={() => {this.props.open(event)}}>
+      <Panel onClick={() => {this.props.open(event)}} style={{boxShadow: '5px 5px 5px #888888'}}>
            <Col md={2}>
                 <Thumbnail src={event.get('banner') ? event.get('banner')[0].url : blank}/>
            </Col>

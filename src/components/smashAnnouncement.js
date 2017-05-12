@@ -8,7 +8,7 @@ class smashEvent extends Component {
   render() {
     let announcement = this.props.announcement;
     return (
-      <Panel onClick={() => {this.props.open(announcement)}}>
+      <Panel onClick={() => {this.props.open(announcement)}} style={{boxShadow: '5px 5px 5px #888888'}}>
            <Col md={8} sm={12}>
                 <Row><h3 >{announcement.get('Title')}</h3></Row>
                 <Row><h4 >{announcement.get('SubTitle')}</h4></Row>
