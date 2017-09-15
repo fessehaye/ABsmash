@@ -49,9 +49,9 @@ class SmashModal extends Component {
   render() {
     let input = this.props.selected ? this.props.selected.get('Notes') : 'N/A';
     let locationCode = this.props.selected ? this.props.selected.get('Postal Code') : 'null';
-    let dateStyle ={
+    let dateStyle = {
         display: 'flex',
-        justifyContent: 'space-around'
+        justifyContent: 'center'
     }
     // Wrap all `react-google-maps` components with `withGoogleMap` HOC
     // and name it GettingStartedGoogleMap
@@ -75,16 +75,17 @@ class SmashModal extends Component {
     return (
       <Modal bsSize="large" show={this.props.showModal} onHide={() => {this.props.close()}} onEnter={() => {this.loadAddress()}}>
               <Modal.Header closeButton>
-                <Modal.Title>
-                    {this.props.selected ? this.props.selected.get('Name') : '' } 
-                    &nbsp;[{this.props.selected ? this.props.selected.get('City') : 'N/A'}]
-                </Modal.Title>
+                <h4 className="modal-title" style={{display:"flex"}}>
+                    <span >{this.props.selected ? this.props.selected.get('Name') : '' }</span> 
+                    <span style={{marginLeft:"auto",marginRight:15}}>{this.props.selected ? this.props.selected.get('City') : 'N/A'}</span>
+                </h4>
               </Modal.Header>
               <Modal.Body>
                 <Row>
                     <Col md={12}>
                         <h4 style={dateStyle}> 
                              <span> { this.props.selected ? moment(this.props.selected.get('start date')).format('LLL') : 'N/A'}</span>
+                             <span style={{margin:"0 20px"}}> - </span>
                              <span> { this.props.selected ? moment(this.props.selected.get('end date')).format('LLL') : 'N/A'}</span>
                         </h4>
                     </Col>
@@ -97,10 +98,10 @@ class SmashModal extends Component {
                             locationCode
                              ? <GettingStartedGoogleMap
                             containerElement={
-                                <div style={{ height: `300px`,width : "100%" }} />
+                                <div style={{ height: `300px`,width : "100%",padding:"0 15px" }} />
                             }
                             mapElement={
-                                <div style={{ height: `300px`,width : "100%" }} />
+                                <div style={{ height: `300px`,width : "100%",padding:"0 15px" }} />
                             }
                             onMapLoad={this.handleMapLoad}
                         

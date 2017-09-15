@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid,Row,Form,FormGroup,Jumbotron} from 'react-bootstrap';
+import {Grid,Form,FormGroup,Jumbotron} from 'react-bootstrap';
 import Airtable from 'airtable';
 import SmashModal from '../components/modalAnnouncement';
 import Card from '../components/smashAnnouncement';
@@ -81,7 +81,7 @@ class Announcements extends Component {
     return (
       <Grid>      
         <Jumbotron>
-          <Row>
+          <div>
             <Form>
               <FormGroup>
                 <Select
@@ -97,9 +97,9 @@ class Announcements extends Component {
                   />
               </FormGroup>
             </Form>
-          </Row>
+          </div>
           <br/>
-          <Row>
+          <div>
             {
               filteredEvents.length > 0 ? 
                 filteredEvents.map((announcement,index) => {
@@ -111,7 +111,7 @@ class Announcements extends Component {
                     <Spinner spinnerName='double-bounce' />
                   </div>
             }
-          </Row>
+          </div>
         </Jumbotron>
         <SmashModal showModal={this.state.showModal} selected={this.state.selected} open={this.open} close={this.close}/>
       </Grid>

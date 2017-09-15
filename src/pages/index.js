@@ -6,6 +6,8 @@ import { SocialIcon } from 'react-social-icons';
 import { Link } from 'react-router';
 import Spinner from 'react-spinkit';
 import './index.css';
+import announceLogo from './announcement.jpg';
+import eventLogo from './event.jpg';
 
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 
@@ -81,18 +83,20 @@ class Main extends Component {
               </Row>
               <Row>
                 <Col xs={12} md={4} mdOffset={1}>
-                  <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
-                  welcoming scenes for every installment of the hit Nintendo series. Browse around to
-                  find information on our events and our players, and how you can get involved!</p>
+                  <div style={{display:'flex',flexDirection:'column',justifyContent:'center',height:'100%'}}>
+                    <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
+                    welcoming scenes for every installment of the hit Nintendo series. Browse around to
+                    find information on our events and our players, and how you can get involved!</p>
 
-                  <p>
-                    Edmonton’s Smash Bros community is a welcoming
-                    place that appeals to new gamers and seasoned
-                    players alike. Impressively, the club has been
-                    running ten years strong, attracting some of the best
-                    competitive talent in Western Canada, and involving
-                    60-70 players weekly.
-                  </p>
+                    <p>
+                      Edmonton’s Smash Bros community is a welcoming
+                      place that appeals to new gamers and seasoned
+                      players alike. Impressively, the club has been
+                      running ten years strong, attracting some of the best
+                      competitive talent in Western Canada, and involving
+                      60-70 players weekly.
+                    </p>
+                  </div>
 
                 </Col>
                 <Col xs={12} md={6}>
@@ -104,12 +108,30 @@ class Main extends Component {
               <hr />
               <Row>
                 <Col md={6} xs={12}>
-                  <p>New to the community? Want to learn more about the competitive ruleset for your favorite game? Come check out our information section!</p>
-                  <p><Link to="/info"><Glyphicon glyph="arrow-right" /> Learn More</Link ></p>
+                  <div className="home-card">
+                    <div className="bg">
+                      <div className="content">
+                        <p>
+                          New to the community? Want to learn more about the competitive ruleset for your favorite game? Come check out our information section!
+                        </p>
+                        <Link to="/info"> <button >Learn More</button></Link >
+                      </div>
+                    </div>
+                    <img src={announceLogo}/>>
+                  </div>
                 </Col>
                 <Col md={6} xs={12}>
-                  <p>Ready to go to your first tourney? Forgot where the next out of city tourney is? Come check out our event section to be up to date!</p>
-                  <p><Link to="/events"><Glyphicon glyph="arrow-right" /> Learn More</Link ></p>
+                  <div className="home-card2">
+                      <div className="bg">
+                        <div className="content">
+                          <p>
+                            Ready to go to your first tourney? Forgot where the next out of city tourney is? Come check out our event section to be up to date!
+                          </p>
+                          <Link to="/events"> <button >Learn More</button></Link >
+                        </div>
+                      </div>
+                      <img src={eventLogo}/>>
+                  </div>
                 </Col> 
               </Row>
               <hr />

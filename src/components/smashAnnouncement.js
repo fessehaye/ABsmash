@@ -9,13 +9,11 @@ class smashEvent extends Component {
     let announcement = this.props.announcement;
     return (
       <Panel onClick={() => {this.props.open(announcement)}} style={{boxShadow: '5px 5px 5px #888888'}}>
-           <Col md={8} sm={12}>
-                <Row><h3 >{announcement.get('Title')}</h3></Row>
-                <Row><h4 >{announcement.get('SubTitle')}</h4></Row>
-           </Col>
-           <Col md={4} sm={12}>
-                <h3 className="dateHeader" style={{textAlign:"right"}}>{moment(announcement.get('Created On')).format('LL')}</h3>
-           </Col>
+          <div style={{display:"flex",flex:'1 1 auto',flexDirection:'column',justifyContent:'center',marginLeft:20}}>
+                <span style={{marginLeft:5,marginBottom:10,color:"#888",fontSize:18}}>{moment(announcement.get('Created On')).format('LL')}</span>
+                <span style={{marginLeft:5,fontSize:26,lineHeight:'24px',fontWeight:700}}>{announcement.get('Title')}</span>
+                <span style={{marginLeft:5,fontSize:24,lineHeight:'22px'}}>{announcement.get('SubTitle')}</span>
+          </div>
      </Panel>
     );
   }

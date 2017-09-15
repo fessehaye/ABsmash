@@ -42,3 +42,72 @@ p {
     font-size: 50px !important;
     letter-spacing: 0.1em;
 }
+
+.home-card,.home-card2 {
+    width: 100%;
+    position: relative;
+    display: flex;
+    height: 20rem;
+    color:#fff;
+    margin-bottom: 1rem;
+}
+
+.home-card img,.home-card2 img {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+}
+
+.home-card .content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.home-card2 .content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.home-card .bg, .home-card2 .bg {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+}
+
+ .home-card2 .bg {
+    justify-content: flex-end;
+}
+
+.home-card button, .home-card2 button {
+    font-family: lato;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-width: 1px;
+    transition: 0.25s ease-in-out all;
+}
+
+.home-card button:hover, .home-card2 button:hover{
+    background-color: #fff;
+    color:darkblue;
+}
+.home-card p,.home-card2 p {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
