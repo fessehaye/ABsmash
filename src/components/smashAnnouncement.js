@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col,Panel,Row} from 'react-bootstrap';
+import {Panel} from 'react-bootstrap';
 import moment from 'moment';
 import './smashEvent.css';
 

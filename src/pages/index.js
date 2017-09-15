@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row,Jumbotron,Col,Glyphicon} from 'react-bootstrap';
+import {Row,Jumbotron,Col} from 'react-bootstrap';
 import Carousel from '../components/smashCarousel';
 import Airtable from 'airtable';
 import { SocialIcon } from 'react-social-icons';
@@ -117,7 +117,7 @@ class Main extends Component {
                         <Link to="/info"> <button >Learn More</button></Link >
                       </div>
                     </div>
-                    <img src={announceLogo}/>>
+                    <img src={announceLogo} role="presentation"/>>
                   </div>
                 </Col>
                 <Col md={6} xs={12}>
@@ -130,7 +130,7 @@ class Main extends Component {
                           <Link to="/events"> <button >Learn More</button></Link >
                         </div>
                       </div>
-                      <img src={eventLogo}/>>
+                      <img src={eventLogo} role="presentation"/>>
                   </div>
                 </Col> 
               </Row>
