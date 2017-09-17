@@ -35,12 +35,11 @@ class Footer extends Component {
                         {footer.name}
                       </p>)
                   })}
-              </div>         
+              </div>
+              <p style={{marginBottom:30}}>©SSBU 2017</p>         
             </footer>
           </Grid>
         </div>
-        <hr />
-        <p>©SSBU 2017</p>
       </div>
     );
   }

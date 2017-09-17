@@ -7,7 +7,8 @@ import { Link } from 'react-router';
 import Spinner from 'react-spinkit';
 import './index.css';
 import announceLogo from './announcement.jpg';
-import eventLogo from './event.jpg';
+import eventLogo from './case.jpg';
+import jtLogo from './event.jpg';
 
 var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 
@@ -81,7 +82,7 @@ class Main extends Component {
                 <h1 >Welcome To The Edmonton Smash Community</h1>
                 <hr />
               </Row>
-              <Row>
+              <Row style={{marginBottom:20}}>
                 <Col xs={12} md={4} mdOffset={1}>
                   <div style={{display:'flex',flexDirection:'column',justifyContent:'center',height:'100%'}}>
                     <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
@@ -105,9 +106,8 @@ class Main extends Component {
                   </div>
                 </Col>
               </Row>
-              <hr />
               <Row>
-                <Col md={6} xs={12}>
+                <div style={{display:'flex',flexWrap:'wrap'}}>
                   <div className="home-card">
                     <div className="bg">
                       <div className="content">
@@ -119,8 +119,6 @@ class Main extends Component {
                     </div>
                     <img src={announceLogo} role="presentation"/>>
                   </div>
-                </Col>
-                <Col md={6} xs={12}>
                   <div className="home-card2">
                       <div className="bg">
                         <div className="content">
@@ -132,17 +130,24 @@ class Main extends Component {
                       </div>
                       <img src={eventLogo} role="presentation"/>>
                   </div>
-                </Col> 
+                </div> 
               </Row>
-              <hr />
               <Row>
-                <p>Learn about our growing organizations by joining our facebook group for further news and announcements!</p>
-                <p>For any questions or inquires, please email us and we will get back to you.</p>
-                <div className="socialList">
-                  <SocialIcon url="https://www.facebook.com/groups/edmontonsmash/" color="#1986FF"/>
-                  <SocialIcon network="email" url="mailto:edmontonsmash@gmail.com" color="#1986FF"/>
-                  <SocialIcon url="https://www.youtube.com/user/SSBUniversity" color="#1986FF"/>
-                </div>           
+                  <div className="home-card">
+                        <div className="bg">
+                          <div className="content">
+                            <p>
+                              Learn about our growing organizations by joining our facebook group for further news and announcements! For any questions or inquires, please email us and we will get back to you.
+                            </p>
+                            <div className="socialList">
+                              <SocialIcon url="https://www.facebook.com/groups/edmontonsmash/" color="#1986FF"/>
+                              <SocialIcon network="email" url="mailto:edmontonsmash@gmail.com" color="#1986FF"/>
+                              <SocialIcon url="https://www.youtube.com/user/SSBUniversity" color="#1986FF"/>
+                            </div>  
+                          </div>
+                        </div>
+                        <img src={jtLogo} role="presentation"/>>
+                  </div>       
               </Row>
             
           </Jumbotron>
