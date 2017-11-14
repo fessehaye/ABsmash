@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Panel} from 'react-bootstrap';
-import blank from './blank.jpg';
+import blank from '../assets/blank.jpg';
 import moment from 'moment';
 import './smashEvent.css';
 

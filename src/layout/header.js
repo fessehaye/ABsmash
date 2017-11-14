@@ -3,8 +3,8 @@ import {Navbar,Nav,NavItem,Glyphicon} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Affix } from 'react-overlays';
 import './header.css';
-import banner from './banner2.jpg';
-import logo from './esc.png';
+import banner from '../assets/banner2.jpg';
+import logo from '../assets/esc.png';
 
 class Header extends Component {
     render() {

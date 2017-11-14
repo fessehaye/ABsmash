@@ -1,80 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Row,Jumbotron,Col} from 'react-bootstrap';
 import Carousel from '../components/smashCarousel';
-import Airtable from 'airtable';
 import { SocialIcon } from 'react-social-icons';
 import { Link } from 'react-router';
 import Spinner from 'react-spinkit';
-import './index.css';
-import announceLogo from './announcement.jpg';
-import eventLogo from './case.jpg';
-import jtLogo from './event.jpg';
+import announceLogo from '../assets/announcement.jpg';
+import eventLogo from '../assets/case.jpg';
+import jtLogo from '../assets/event.jpg';
 
-var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 
-class Main extends Component {
+const Main = props => {
 
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      events: [],
-      showModal: false,
-      selected: null,
-      complete:false
-    };
-
-    this.close = this.close.bind(this);
-    this.open= this.open.bind(this);
-
-  }
-
-  componentDidMount = () => {
-    base('Events').select({
-        view: 'Main View',
-        sort: [
-            {field: 'Forced Order', direction: 'desc'},
-            {field: 'start date', direction: 'asc'}
-        ],
-        filterByFormula: 'AND(IS_BEFORE(TODAY(),{start date}),Approved = 1)',
-        maxRecords: 7
-    }).firstPage((err, records) => {
-        if (err) { console.error(err); return; }
-        this.setState({events: records, selectedEvent:records[0],complete:true});
-    });
-  }
-
-  open = (event) => {
-    this.setState({
-      showModal:true,
-      selected: event
-    });
-  }
-
-  close = () => {
-    this.setState({
-      showModal:false
-    });
-  }
-
-  render() {
-    let carousel = this.state.complete ? 
+  let carousel = props.complete ? 
           <Carousel 
-            events={this.state.events}
-            showModal={this.state.showModal}
-            open={this.open}
-            close={this.close}
-            selected={this.state.selected}
+            events={props.events}
+            showModal={props.showModal}
+            open={props.open}
+            close={props.close}
+            selected={props.selected}
           /> :
           <div className="loadDiv">
             <Spinner spinnerName='double-bounce' />
           </div>;
     
-    carousel = this.state.events.length > 0 ? carousel : null
+    carousel = props.events.length > 0 ? carousel : null
     
     return (
       <div>
-        {carousel }
+        { carousel }
           
           <Jumbotron className="jumbotron customJumbo" style={{textAlign:"center"}}>
             
@@ -155,7 +108,6 @@ class Main extends Component {
       </div>
       
     );
-  }
 }
 
 export default Main;

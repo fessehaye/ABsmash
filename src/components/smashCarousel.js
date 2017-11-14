@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Carousel,Glyphicon,OverlayTrigger,Tooltip} from 'react-bootstrap';
 import SmashModal from './smashModal';
 
-import blank from './blank.jpg';
+import blank from '../assets/blank.jpg';
 import './smashCarousel.css';
 
 const event_format = {
