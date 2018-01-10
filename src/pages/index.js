@@ -85,12 +85,12 @@ class Main extends Component {
               <Row style={{marginBottom:20}}>
                 <Col xs={12} md={4} mdOffset={1}>
                   <div style={{display:'flex',flexDirection:'column',justifyContent:'center',height:'100%'}}>
-                    <p>The Edmonton Super Smash Bros. community is home to active, talented, and 
+                    <p>The Edmonton Smash Bros. Community is home to active, talented, and 
                     welcoming scenes for every installment of the hit Nintendo series. Browse around to
                     find information on our events and our players, and how you can get involved!</p>
 
                     <p>
-                      Edmonton’s Smash Bros community is a welcoming
+                      Edmonton’s Smash Bros Community is a welcoming
                       place that appeals to new gamers and seasoned
                       players alike. Impressively, the club has been
                       running ten years strong, attracting some of the best
