@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Page from './layout/layout'
-import Main from './pages/index';
-import Events from './pages/events';
-import Info from './pages/information';
-import LocationFind from './pages/location';
-import Announcement from './pages/announcement'
+import Page from './layout/layout';
+import Main from './container/index';
+import Events from './container/events';
+import Info from './container/information';
+import Announcement from './container/announcement';
 
 import { Router, Route,browserHistory } from 'react-router'
 
@@ -17,7 +16,6 @@ ReactDOM.render(
             <Route path='announcements' component={Announcement} />
             <Route path='info' component={Info} />
             <Route path='ranking' component={Events} />
-            <Route path='location' component={LocationFind} />
           </Route>
         </Router>        
     ,

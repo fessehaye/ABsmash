@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Grid,Panel,Accordion} from 'react-bootstrap';
 
 const title = (
   <h3>Information And Rulesets</h3>
 );
 
-class Information extends Component {
+const Information = props => {
 
-  render() {
+  
     return (
       <Grid>
         <Panel header={title} bsStyle="primary">
@@ -227,7 +227,7 @@ class Information extends Component {
         </Panel>
       </Grid>
     );
-  }
+  
 }
 
 export default Information;

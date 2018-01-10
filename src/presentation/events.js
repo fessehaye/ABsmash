@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Grid,Form,FormGroup,FormControl,Jumbotron} from 'react-bootstrap';
-import Airtable from 'airtable';
 import SmashModal from '../components/smashModal';
 import Card from '../components/smashEvent';
 import Switch from 'react-bootstrap-switch';
@@ -8,9 +7,7 @@ import Select from 'react-select';
 import _ from 'underscore';
 import Spinner from 'react-spinkit';
 import 'react-select/dist/react-select.css';
-import './react-bootstrap-switch.css';
 
-var base = new Airtable({apiKey: 'keyni5fwAIql6tjq9'}).base('app7lZ0g2Uh344gdT');
 const CITY = [
 	{ label: 'Edmonton', value: 'Edmonton' },
 	{ label: 'Calgary', value: 'Calgary' },
@@ -23,68 +20,14 @@ const GAMES = [
   { label: 'Smash 64', value: '64' }
 ];
 
-class Event extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      events: [],
-      showModal: false,
-      selected: null,
-      searchText: '',
-      oldPost: false,
-      city: '',
-      games: [],
-      complete:false
-    };
+const Event = props => {
 
-    this.close = this.close.bind(this);
-    this.open= this.open.bind(this);
-
-  }
-
-  componentDidMount = () => {
-    this.loadData();
-  }
-
-  loadData = () => {
-    let query = {
-        view: 'Main View',
-        sort: [
-            {field: 'Forced Order', direction: 'desc'},
-            {field: 'start date', direction: 'asc'}
-        ]
-    }
-    if(!this.state.oldPost){
-      query.filterByFormula = 'AND(IS_BEFORE(TODAY(),{start date}),Approved = 1)';
-    }
-    base('Events').select(query).firstPage((err, records) => {
-        if (err) { console.error(err); return; }
-        this.setState({events: records, selected:records[0],complete:true});
-    });
-  }
-
-  open = (event) => {
-    this.setState({
-      showModal:true,
-      selected: event
-    });
-  }
-
-  close = () => {
-    this.setState({
-      showModal:false
-    });
-  }
-
-  render() {
-
-    let filteredEvents= this.state.events.filter(
+    let filteredEvents= props.events.filter(
       (event) => {
         if(event){
-          if(_.difference(this.state.games,event.get('events')).length === 0 || this.state.games.length === 0){
-            if(event.get('City') === this.state.city || !this.state.city){
-              return event.get('Name').toLowerCase().includes(this.state.searchText);
+          if(_.difference(props.games,event.get('events')).length === 0 || props.games.length === 0){
+            if(event.get('City') === props.city || !props.city){
+              return event.get('Name').toLowerCase().includes(props.searchText);
             }
           }
         }
@@ -101,20 +44,20 @@ class Event extends Component {
                 <FormControl 
                   type="text"
                   placeholder="Search"
-                  value={this.state.searchText}
+                  value={props.searchText}
                   onChange={(e) => (
-                    this.setState({searchText:e.target.value.toLowerCase()})
+                    props.updateText(e)
                   )}
                   />
               </FormGroup>
               <FormGroup>
                 <Select                    
                     simpleValue
-                    value={this.state.city}
+                    value={props.city}
                     options={CITY}
                     placeholder="City"
                     onChange={ (value) => {
-                      this.setState({city:value});
+                      props.updateCity(value)
                     }}
                   />
               </FormGroup>
@@ -122,13 +65,12 @@ class Event extends Component {
                 <Select
                     multi
                     simpleValue
-                    value={this.state.games}
+                    value={props.games}
                     options={GAMES}
                     placeholder="Games"
                     onChange={ 
                       (value) => {
-                        value = value ? value.split(',') : [];
-                        this.setState({games:value});
+                        props.updateGames(value)
                       }
                     }
                   />
@@ -139,11 +81,8 @@ class Event extends Component {
                   <Switch
                     onText="Yes"
                     offText="No"
-                    value={this.state.oldPost}
-                    onChange={ () => {
-                      this.setState({oldPost:!this.state.oldPost});
-                      this.loadData();
-                      }}
+                    value={ props.oldPost }
+                    onChange={ props.toggleHistory }
                   />
                 </h4>
               </FormGroup>
@@ -154,21 +93,20 @@ class Event extends Component {
             {
               filteredEvents.length > 0 ? 
                 filteredEvents.map((event,index) => {
-                      return (<div key={index} className="clickable"><Card event={event} open={this.open}/></div>)
+                      return (<div key={index} className="clickable"><Card event={event} open={props.open}/></div>)
                 }) :              
-                this.state.complete ? 
+                props.complete ? 
                   <h3 style={{textAlign: 'center',fontVariant:'small-caps'}}>No Events Found...</h3> :
                   <div className="loadDiv">
                     <Spinner spinnerName='double-bounce' />
-                  </div>
-                  
+                  </div>      
             }
           </div>
         </Jumbotron>
-        <SmashModal showModal={this.state.showModal} selected={this.state.selected} open={this.open} close={this.close}/>
+        <SmashModal showModal={props.showModal} selected={props.selected} open={props.open} close={props.close}/>
       </Grid>
     );
-  }
+  
 }
 
 export default Event;
