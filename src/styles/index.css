@@ -14,11 +14,7 @@ html, body {
     box-sizing: border-box;
 }
 
-:root {
-    overflow-x: hidden;
-    height: 100%;
-    font-size: 62.5%;
-}
+
 
 @import "./components/index.css";
 @import "./layout/index.css";
