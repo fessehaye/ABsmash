@@ -6,3 +6,9 @@
     min-height: 100vh;
     grid-template-rows: 7.5rem 1fr 22rem; 
 }
+
+:root {
+    overflow-x: hidden;
+    height: 100%;
+    font-size: 62.5%;
+}
