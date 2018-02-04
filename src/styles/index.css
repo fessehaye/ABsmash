@@ -1,0 +1,25 @@
+@font-face {
+    font-family: glacial;
+    /* src: url(GlacialIndifference-Regular.otf); */
+}
+#root {
+    min-height: 100%;
+    position: relative;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 16px;
+
+}
+
+:root {
+    overflow-x: hidden;
+    height: 100%;
+    font-size: 62.5%;
+}
+
+@import "./components/index.css";
+@import "./layout/index.css";
+@import "./presentation/index.css";
