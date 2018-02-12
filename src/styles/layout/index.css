@@ -7,8 +7,3 @@
     grid-template-rows: 6rem 1fr 22rem; 
 }
 
-:root {
-    overflow-x: hidden;
-    height: 100%;
-    font-size: 62.5%;
-}
