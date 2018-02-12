@@ -14,7 +14,7 @@ export default class Main extends React.Component<{}, States> {
   
     return (
         <div className="hello">
-          mains
+          mains testing
         </div>
       );
     }

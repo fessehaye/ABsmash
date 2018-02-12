@@ -1,4 +1,25 @@
 header{
     grid-column: 1/-1;
     background-color: aliceblue;
+    display: flex;
+
+    nav {
+        width:100%;
+        display: flex;
+        font-variant: small-caps;
+        font-family: Montserrat,sans-serif;
+        text-transform: lowercase;
+        letter-spacing: .1em;
+        align-items: center;
+        img {
+            max-width:100%;
+            max-height:100%;
+            margin-left: 3rem;
+            margin-right:auto;
+            /* object-fit: cover; */
+        }
+        span {
+            padding: 1rem 2rem;
+        }
+    }
 }

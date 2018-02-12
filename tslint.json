@@ -10,7 +10,10 @@
       "trailing-comma": false,
       "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
       "function-name": false,
-      "jsx-no-lambda": false
+      "jsx-no-lambda": false,
+      "space-within-parens": true,
+      "triple-equals": true,
+      "type-operator-spacing": true
     },
     "rulesDirectory": []
   }

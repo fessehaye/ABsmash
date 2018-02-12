@@ -4,7 +4,7 @@
 .layout {
     display: grid;
     min-height: 100vh;
-    grid-template-rows: 7.5rem 1fr 22rem; 
+    grid-template-rows: 6rem 1fr 22rem; 
 }
 
 :root {
