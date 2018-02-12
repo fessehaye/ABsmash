@@ -1,6 +1,6 @@
 @font-face {
     font-family: glacial;
-    src: url(GlacialIndifference-Regular.otf);
+    /* src: url(GlacialIndifference-Regular.otf); */
 }
 #root {
     min-height: 100%;
