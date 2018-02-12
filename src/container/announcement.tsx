@@ -1,21 +1,13 @@
-import * as React from "react";
+import * as React from 'react';
 
-interface States {
-
-}
+interface States {}
 
 export default class Announcement extends React.Component<{}, States> {
-
-  constructor(props:{}){
+  constructor(props: {}) {
     super(props);
   }
 
   render() {
-  
-    return (
-        <div className="hello">
-          announcement
-        </div>
-      );
-    }
+    return <div className="hello">announcement</div>;
+  }
 }
