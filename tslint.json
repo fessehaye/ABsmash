@@ -13,7 +13,8 @@
       "jsx-no-lambda": false,
       "space-within-parens": true,
       "triple-equals": true,
-      "type-operator-spacing": true
+      "type-operator-spacing": true,
+      "import-name": false
     },
     "rulesDirectory": []
   }
