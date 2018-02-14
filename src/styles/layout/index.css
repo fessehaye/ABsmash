@@ -4,6 +4,9 @@
 .layout {
     display: grid;
     min-height: 100vh;
-    grid-template-rows: 6rem 1fr 22rem; 
+    grid-template-rows: 7rem 1fr 22rem; 
 }
 
+.content {
+    background-color: var(--color__grey-light);
+}

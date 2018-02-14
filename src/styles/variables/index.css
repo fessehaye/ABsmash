@@ -1,4 +1,14 @@
 :root {
-    --yellow: #ffc600;
-    --black: #272727;
+    --color__blue: #2196F3;
+    --color__blue-dark: #1976D2;
+    --color__blue-light: #64B5F6;
+    --color__blue-active: #448AFF;
+    --color__orange: #FFAB40;
+    --color__orange-dark: #FF9100;
+    --color__orange-light: #FFD180;
+    --primary-text: #000000;
+    --color__grey: #F5F5F5;
+    --color__grey-dark: #E0E0E0;
+    --color__grey-light: #FAFAFA;
+    --color__white: #ffffff;
 }

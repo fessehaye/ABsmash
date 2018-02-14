@@ -28,3 +28,4 @@ html, body {
 @import "./components/index.css";
 @import "./layout/index.css";
 @import "./presentation/index.css";
+@import "./variables/index.css";
