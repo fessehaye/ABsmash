@@ -11,6 +11,8 @@ import {
     Route
 } from 'react-router-dom';
 
+import './styles/index.scss';
+
 registerObserver();
 
 ReactDOM.render(

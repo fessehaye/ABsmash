@@ -1,5 +1,5 @@
-@import "./header.css";
-@import "./footer.css";
+@import "./header";
+@import "./footer";
 
 .layout {
     display: grid;
@@ -8,5 +8,5 @@
 }
 
 .content {
-    background-color: var(--color__grey-light);
+    background-color: $color__grey-light;
 }

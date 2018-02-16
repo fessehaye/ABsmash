@@ -1,6 +1,6 @@
 header {
     grid-column: 1/-1;
-    background-color: #303F9F;
+    background-color: #1976D2;
     display: flex;
 
     nav {
@@ -11,7 +11,6 @@ header {
         text-transform: lowercase;
         letter-spacing: .1em;
         padding: 0 3rem;
-        align-items:stretch;
         img {
             height:100%;
             max-width: 6rem;;
@@ -23,15 +22,15 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            color:#BDBDBD;
+            color:$color__grey;
             border-bottom: 0.5rem solid transparent;
             transition: all 0.4s ease-in-out;
             margin-left: 0.5rem;
         }
         span:hover {
-            border-bottom: 0.5rem solid #FFAB40;
-            color: #FFFFFF;
-            background-color: #304FFE;
+            border-bottom: 0.5rem solid $color__orange;
+            color: $color__white;
+            background-color: $color__blue-active;
         }
     }
 }

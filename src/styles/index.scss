@@ -1,6 +1,6 @@
 @font-face {
     font-family: glacial;
-    /* src: url(GlacialIndifference-Regular.otf); */
+    src: url(GlacialIndifference-Regular.otf);
 }
 #root {
     min-height: 100%;
@@ -24,8 +24,7 @@ html, body {
     box-sizing: border-box;
 }
 
-
-@import "./components/index.css";
-@import "./layout/index.css";
-@import "./presentation/index.css";
-@import "./variables/index.css";
+@import "./variables/index";
+@import "./components/index";
+@import "./layout/index";
+@import "./presentation/index";
