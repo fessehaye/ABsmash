@@ -1,7 +1,4 @@
-@font-face {
-    font-family: glacial;
-    src: url(GlacialIndifference-Regular.otf);
-}
+
 #root {
     min-height: 100%;
     position: relative;
@@ -24,7 +21,9 @@ html, body {
     box-sizing: border-box;
 }
 
+@import './node_modules/sass-mq/_mq';
 @import "./variables/index";
 @import "./components/index";
 @import "./layout/index";
 @import "./presentation/index";
+
