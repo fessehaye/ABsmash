@@ -34,7 +34,7 @@ footer{
         @include mq($until: 99em) {
             width: 33%;
         }
-        @include mq($until: 70em) {
+        @include mq($until: 60em) {
             width: 50%;
             padding-left: 1.5em;
         }

@@ -22,7 +22,7 @@ export default class Header extends React.Component<{}, HeaderState> {
       return (
         <header>
           <nav role="navigation">
-            {/* <img src={logo} role="presentation"/> */}
+            <img src={logo} role="presentation"/>
             <a className="nav__link" href="#">Home</a>
             <a className="nav__link" href="#">Events</a>
             <a className="nav__link" href="#">Announcement</a>

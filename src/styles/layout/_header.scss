@@ -38,21 +38,21 @@ header {
         }
         .bars-container {
             margin-left: auto;
+            @include mq($from: 45em) {
+                display: none;
+            }
         }
         .fa-bars {
             color: $color__white;
             height: 100%;
-            display: none;
             cursor: pointer;
-            @include mq($until: 45em) {
-                display: inline-block;
-            }
+            
         }
     }
 
     .mobile-nav {
         position: absolute;
-        height: 100vh;
+        height: calc(100vh - 7rem);
         width:50vw;
         top:7rem;
         background: $color__blue;
@@ -83,6 +83,7 @@ header {
                 padding: 1rem 3rem;
                 width:100%;
                 display: block;
+                font-size: 1.8rem;
             }
         }
     }
