@@ -16,7 +16,7 @@ header {
             max-width: 6rem;;
             margin-right:auto;
         }
-        span {
+        a.nav__link {
             padding: 0rem 2rem;
             height:100%;
             display: flex;
@@ -26,11 +26,63 @@ header {
             border-bottom: 0.5rem solid transparent;
             transition: all 0.4s ease-in-out;
             margin-left: 0.5rem;
+            text-decoration: none;
+            @include mq($until: 45em) {
+                display: none;
+            }
         }
-        span:hover {
+        a:hover {
             border-bottom: 0.5rem solid $color__orange;
             color: $color__white;
             background-color: $color__blue-active;
+        }
+
+        .fa-bars {
+            color: $color__white;
+            height: 100%;
+            display: none;
+            cursor: pointer;
+            margin-left: auto;
+            @include mq($until: 45em) {
+                display: inline-block;
+            }
+        }
+    }
+
+    .mobile-nav {
+        position: absolute;
+        height: 100vh;
+        width:50vw;
+        top:7rem;
+        background: $color__blue;
+        font-variant: small-caps;
+        font-family: Montserrat,sans-serif;
+        text-transform: lowercase;
+        letter-spacing: .1em;
+        padding-top: 3rem;
+        transform: translateX(-50vw);
+        transition: 3s ease-in-out transform;
+
+        &.nav-open {
+            transform: translateX(0%);
+        }
+        @include mq($from: 45em) {
+            display: none;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                margin-top: 1rem
+            }
+            a {
+                text-decoration: none;
+                color:$color__white;
+                padding: 1rem 3rem;
+                width:100%;
+                display: block;
+            }
         }
     }
 }

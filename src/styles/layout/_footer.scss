@@ -1,3 +1,52 @@
 footer{
     grid-column: 1/-1;
+    background: $color__blue-dark;
+    color:$color__white;
+    padding: 0rem 3rem;
+
+    .footer__header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer__content {
+        
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+    }
+
+    .footer__copyright {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer__link {
+        color:$color__grey;
+        border-left: 2px solid #FFA200;
+        padding-left: 3em;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        width: 25%;
+        @include mq($until: 99em) {
+            width: 33%;
+        }
+        @include mq($until: 70em) {
+            width: 50%;
+            padding-left: 1.5em;
+        }
+        @include mq($until: 40em) {
+            width: 100%;
+        }
+        cursor: pointer;
+        &:hover {
+            color:$color__white;
+        }
+
+    }
+
+
 }
