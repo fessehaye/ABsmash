@@ -15,12 +15,10 @@ export default class Header extends React.Component<{}, HeaderState> {
   }
 
   toggleMobile = () => {
-    console.log(this.state.mobileNav);
     this.setState({mobileNav: !this.state.mobileNav});
   }
 
-  render() {
-    console.log(this.state.mobileNav);
+  render() {   
       return (
         <header>
           <nav role="navigation">
@@ -29,7 +27,9 @@ export default class Header extends React.Component<{}, HeaderState> {
             <a className="nav__link" href="#">Events</a>
             <a className="nav__link" href="#">Announcement</a>
             <a className="nav__link" href="#">Information</a>
-            <i onClick={() => this.toggleMobile} className="fas fa-2x fa-bars" />
+            <div className="bars-container" onClick={this.toggleMobile}>
+              <i className="fas fa-2x fa-bars" />
+            </div>
           </nav>
           <div className={!this.state.mobileNav ? 'mobile-nav' : 'mobile-nav nav-open'}>
             <ul>

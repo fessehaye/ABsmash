@@ -36,13 +36,14 @@ header {
             color: $color__white;
             background-color: $color__blue-active;
         }
-
+        .bars-container {
+            margin-left: auto;
+        }
         .fa-bars {
             color: $color__white;
             height: 100%;
             display: none;
             cursor: pointer;
-            margin-left: auto;
             @include mq($until: 45em) {
                 display: inline-block;
             }
@@ -61,7 +62,7 @@ header {
         letter-spacing: .1em;
         padding-top: 3rem;
         transform: translateX(-50vw);
-        transition: 3s ease-in-out transform;
+        transition: 0.3s ease-in-out transform;
 
         &.nav-open {
             transform: translateX(0%);
