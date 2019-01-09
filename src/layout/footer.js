@@ -7,7 +7,7 @@ var footerlinks = [
   {name :"Edmonton Group", link:"https://goo.gl/OY8t40"},
   {name :"Calgary Group", link:"https://goo.gl/wBB43K"},
   {name :"Alberta Project M", link:"https://goo.gl/tU4HRc"},
-  {name :"Alberta Smash 4", link:"https://goo.gl/fy0U8l"},
+  {name :"Alberta Ultimate", link:"https://goo.gl/fy0U8l"},
   {name :"Alberta Brawl", link:"https://goo.gl/sQm8cH"},
   {name :"Edmonton SSBM", link:"https://goo.gl/DlLDWo"},
   {name :"Edmonton 64", link:"https://goo.gl/uHgDFN"},
