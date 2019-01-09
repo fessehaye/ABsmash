@@ -37,7 +37,7 @@ class smashCarousel extends Component {
                           {
                             
                             event.get('events').map((games,index2) => {
-                                return (<h2 key={index2 + "b"} >{games}</h2>)
+                                return (<h2 key={index2 + "b"} >{event_format[games]}</h2>)
                             })
                           }
                       </div>
