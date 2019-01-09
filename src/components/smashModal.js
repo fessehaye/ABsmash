@@ -34,7 +34,7 @@ class SmashModal extends Component {
 
   loadAddress = () => {
     let PostalCode = this.props.selected ? this.props.selected.get('Postal Code') : 'T6E0G2';
-    fetch('https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBgAJsGpbIoV8rP45sj4lYkWPDJonaRrfA&address=' + PostalCode)
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.GOOGLE_API}&address=${PostalCode}`)
     .then(function(response) {
         return response.json()
     }).then((json) => {
