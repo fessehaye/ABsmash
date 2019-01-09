@@ -8,7 +8,8 @@ const event_format = {
   "project m": "Project M",
   "melee":"Melee",
   "s4": "Wii U",
-  "64": "Smash 64"
+  "64": "Smash 64",
+  "ultimate":"Ultimate"
 };
 
 

@@ -8,6 +8,7 @@ import './smashCarousel.css';
 const event_format = {
   "project m": "Project M",
   "melee":"Melee",
+  "ultimate":"Ultimate",
   "s4": "Wii U",
   "64": "Smash 64"
 };
@@ -23,7 +24,6 @@ const tooltipMajor = (
 class smashCarousel extends Component {
 
   render() {
-
     return (
       <div>
         <Carousel>
@@ -35,8 +35,9 @@ class smashCarousel extends Component {
                       <h3 className={event.get('City') === "Edmonton" ? "edmLocation" : "cgyLocation"}>{event.get('City')}</h3>
                       <div className="gameEvent">
                           {
+                            
                             event.get('events').map((games,index2) => {
-                                return (<h2 key={index2 + "b"} >{event_format[games]}</h2>)
+                                return (<h2 key={index2 + "b"} >{games}</h2>)
                             })
                           }
                       </div>

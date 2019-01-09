@@ -9,6 +9,7 @@ import './smashModal.css';
 const event_format = {
   "project m": "Project M",
   "melee":"Melee",
+  "ultimate":"Ultimate",
   "s4": "Wii U",
   "64": "Smash 64"
 };
