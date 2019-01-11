@@ -17,7 +17,8 @@ const GAMES = [
 	{ label: 'Melee', value: 'melee' },
 	{ label: 'Wii U', value: 's4' },
 	{ label: 'Project M', value: 'project m' },
-  { label: 'Smash 64', value: '64' }
+  	{ label: 'Smash 64', value: '64' },
+	{ label: 'Ultimate', value: 'ultimate'}
 ];
 
 const Event = props => {
